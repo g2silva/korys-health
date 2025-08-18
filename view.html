@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+	<!-- future style.css -->
+    <style>
+  	  body {
+	    font-size: .900rem;
+	  }
+
+	  .fab {
+	     width: 55px;
+	     height: 55px;
+	     background-color: #0d6efd;
+	     border-radius: 50%;
+	     box-shadow: 0 4px 4px 0 #0d6efd;
+	     transition: all 0.1s ease-in-out;
+	     font-size: 20px;
+	     color: white;
+	     text-align: center;
+	     line-height: 55px;
+	     position: fixed;
+	     right: 30px;
+	     bottom: 30px;
+	  }
+
+	  .fab:hover {
+	     box-shadow: 0 6px 14px 0 #6c757d;
+	     transform: scale(1.05);
+	  }
+	  .accordion-button:not(.collapsed) {
+         background-color: #ffffff;
+	  }
+	
+	  .accordion-button:not(.collapsed) {
+         background-color: #ffffff;
+	  }
+	
+	  hr {
+         margin: 1rem 0;
+         color: inherit;
+         background-color: currentColor;
+         border: 0;
+         opacity: .10;
+	  }
+	
+	  .offcanvas-bottom {
+         height: 25vh;
+	  }
+	  
+    </style>
+  
+    <title>Patient Profile - View</title>
+  </head>
+  <body>	
+  
+  <!-- Navbar -->
+  <nav class="d-flex mb-3 lh-sm justify-content-between align-items-center">
+	
+    <div class="d-flex align-items-center ">
+  	  <a class="nav-link align-items-center" href="#"><i class="h5 bi bi-arrow-left"></i></a>  
+			
+		<div class="small lh-sm d-none d-md-block">
+		  <div class="d-flex justify-content-between" style="height: 12px">
+			<div>
+			  <span class="text-secondary" style="font-size: .700em;">Patient Profile</span>
+			</div>
+		  </div>
+			<span class="d-block opacity-50 h5 align-items-md-end">patientFirstName</span>
+		</div>
+
+
+		<div class="d-grid gap-2 d-flex ms-3 d-none d-md-block">
+		  <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editLead"><i class="bi bi-pencil"></i> Edit Patient</button>
+          <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#monitor" type="button"><i class="bi bi-display"></i> Monitor</button>
+        </div>
+	</div>
+		
+	<div class="dropdown me-3 d-none d-md-block">
+	  <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+		<i class="bi bi-plus-lg"></i> Add
+	  </button>
+	  <ul class="dropdown-menu">
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addNote"><small>Notes</a></small></li>
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addTask"><small>Task</a></small></li>
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addDocument"><small>Documents</a></small></li>
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#chooseContact"><small>Contact: Person</a></small></li>
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addAppointment"><small>Appointments</a></small></li>
+		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addDevice"><small>Device</a></small></li>
+	  </ul>
+	</div>
+		
+	<div class="d-flex align-items-center d-block d-md-none">
+		<div class="dropdown">
+		  <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="h5 bi bi-three-dots-vertical"></i></a>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Share</small></a></li>
+			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editLead"><small>Edit</small></a></li>
+			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete lead</small></a></li>
+			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Help</small></a></li>
+			</ul>
+		</div>
+    </div>
+	
+  </nav>
+
+	<!-- Content -->
+    <div class="container-fluid">  
+	
+	  <!-- addFab -->
+      <a class="fab d-block d-md-none d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="bi bi-plus-lg"></i></a> 
+	
+	  <div class="row mb-3">
+		 
+	    <!-- Alert 1 -->
+	    <div class="container">
+		  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+		    <i class="bi bi-check-circle-fill"></i> <i class="bi bi-exclamation-circle-fill"></i> <i class="bi bi-x-circle-fill"></i> It’s built with default Bootstrap components and utilities with little customization.
+		    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		  </div>
+	      </div>
+	  	  
+	    <!-- column_1 -->
+		<div class="col-md-2">
+		
+		  <div class="text-center mb-3 d-block d-md-none">
+			<img id="brand-image" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" height="100px" width="100px">
+			<p class="text-center opacity-50 d-block d-md-none"><span class="fs-5">leadName</span> <br> <span><small>leadPhone</small></span><br></p>
+		  </div> 	
+		  
+		  <br class="d-block d-md-none"> 
+		  
+		  <!-- NAV -->
+		  <nav class="nav justify-content-around mb-3" aria-label="Secondary navigation">
+		    <div class="text-center lh-md">
+			<a  type="button" class="btn btn-light rounded-circle d-block d-md-none" href="tel:+00 (00) 00000-0000" class="nav-link px-0 align-middle">
+              <i class="fs-5 h3-md bi bi-telephone-fill text-secondary"></i>
+		    </a>
+			<span class="small d-block d-block d-md-none">Call</span>
+			</div>
+			<div class="text-center lh-md">
+		    <a  type="button" class="btn btn-light rounded-circle d-block d-md-none" href="sms:+00 (00) 00000-0000?body=Oi" class="nav-link px-0 align-middle">
+		      <i class="fs-5 h3-md bi bi-chat-left-text-fill text-secondary"></i>
+		    </a>
+			<span class="small d-block d-block d-md-none">Message</span>
+			</div>
+			<div class="text-center lh-md">
+		    <a  type="button" class="btn btn-light rounded-circle d-block d-md-none" href="http://maps.google.com/maps?q=1600%20Pennsylvania%20Avenue%20NW%20Washington%2C%20DC%2020500" target="_blank" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-geo-alt-fill text-secondary"></i>
+		    </a>
+			<span class="small d-block d-block d-md-none">Address</span>
+			</div>
+		  </nav>		
+		
+		  <hr class="d-block d-md-none">	
+		  	
+		  <!-- patientName -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-person me-3"></i>
+		    <div class="small lh-sm">
+			  <div class="d-flex justify-content-between">
+			    <span class="text-dark">Freddie Roberson</span> 
+			  </div>
+			  <span class="d-block opacity-50">		  
+			    <span><small>73</small></span><i class="bi bi-dot"></i>
+			    <span><small>Male</small></span><i class="bi bi-dot"></i>
+			    <span><small>Married</small></span>
+			  </span>
+		    </div>
+		  </div>
+		
+		  <hr class="d-none d-md-block">		
+		
+		  <!-- Phone -->
+		  <div class="d-flex text-muted d-none d-md-block">
+		    <div class="pb-3 mb-0 small lh-sm w-100">
+			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-telephone-fill me-2"></i>+1 773-770-8599</span></a></span>		
+		     </div>
+		  </div>
+			
+		  <!-- Email -->
+		  <div class="d-flex text-muted d-none d-md-block">
+		    <div class="pb-3 mb-0 small lh-sm w-100">
+			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-envelope me-2"></i>janea_predovic@exemple.com</span></a></span>
+		    </div>
+		  </div>
+			
+		  <!-- Address -->
+		  <div class="d-flex text-muted d-none d-md-block">
+		    <i class="fs-5 bi bi-geo-alt d-block d-md-none me-3"></i>
+		      <div class="small lh-sm w-100">
+			    <div class="d-flex justify-content-between">
+			  	  <span class="text-dark">2712 Ivy Walk, West Ednashire, WEynoming 1852-2975 United State</span>
+			    </div>
+			    <span class="d-block opacity-50"><small>Address</small></span>
+			  </div>
+		  </div>
+			
+		  <br> 
+		
+		  <!-- Source -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">...</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Responsible</small></span>
+		    </div>
+		  </div>
+		
+		  <br> 
+		
+		  <!-- Alergies -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
+			  <div class="small lh-sm w-100">
+				<span class="badge rounded-pill bg-secondary">tag1</span>
+				<span class="badge rounded-pill bg-secondary">tag2</span>
+				<span class="badge rounded-pill bg-secondary">tag3</span>
+			    <span class="d-block opacity-50"><small>Alergies</small></span>
+			  </div>
+		  </div>
+			
+		  <br>
+
+		  <!-- Company size -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">...</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Comidities</small></span>
+		    </div>
+		  </div>
+		
+		  <br>		
+		 	
+		  <!-- Added On -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-plus-lg d-block d-md-none me-3"></i>
+			<div class="small lh-sm w-100">
+			  <div class="d-flex justify-content-between">
+				<span class="text-dark">10/21/2018</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Added On</small></span>
+			</div>
+		  </div>
+				
+		  <br> 
+			
+		  <!-- Last Activity -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-clock d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex justify-content-between">
+			    <span class="text-dark">12/15/2019</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Last Activity</small></span>
+		    </div>
+		  </div>
+			
+		  <hr class="d-block d-md-none">	
+		
+		
+		  <br><br><br> 
+		    <br><br><br> 
+			
+	    </div>
+	 
+	    <!-- column_2 -->
+        <div class="col d-none d-md-block">
+			
+			<!-- Vital Signs -->
+			<div class="row">
+			  <div class="col-sm-2">
+				<div class="card border-primary">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-heart-pulse"></i> <small>HR</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2" href="#">
+				<div class="card border-primary">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-compass"></i> <small>BP</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2">
+				<div class="card border-primary">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-lungs"></i> <small>RR</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2 ">
+				<div class="card border-warning">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-moisture"></i> <small>O2</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2">
+				<div class="card border-success">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-thermometer-half"></i> <small>T</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-2">
+				<div class="card border-danger">
+				  <div class="card-body">
+					<h6 class="card-title"><i class="bi bi-pentagon"></i> <small>Score</small></h6>
+					<p class="card-text">...</p>
+				  </div>
+				</div>
+			  </div>
+
+			</div>
+				
+			<br>		
+			
+		  <!-- nav-tab -->
+	      <ul class="nav nav-tabs" id="myTab" role="tablist ">
+		    <li class="nav-item" role="presentation">
+			  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#add_note" type="button" role="tab" aria-controls="home" aria-selected="true">Add a Note</button>
+		    </li>
+		    <li class="nav-item" role="presentation">
+			  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#send_email" type="button" role="tab" aria-controls="profile" aria-selected="false">Send an Email</button>
+		    </li>
+		  </ul>
+		
+	      <!-- tab-content -->	
+		  <div class="tab-content border border-top-0 shadow-sm" id="myTabContent">
+		  
+		    <!-- note-tab -->
+		    <div class="tab-pane fade show active" id="add_note" role="tabpanel" aria-labelledby="home-tab">
+			  <div class="p-3">
+			    <textarea class="form-control form-control-sm" id="#" rows="6" placeholder="Comments"></textarea>
+			    <div class="d-grid gap-2 d-md-block mt-3">
+				  <button class="btn btn-sm btn-primary" type="button">Save</button>
+				  <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
+			    </div>
+			  </div>			  
+		    </div>
+			
+			
+		    <!-- email-tab -->
+		    <div class="tab-pane fade" id="send_email" role="tabpanel" aria-labelledby="profile-tab">	  
+			  <div class="p-3">
+				<div class="row g-1">
+				  <div class="col-md-12">
+					<input type="text" class="form-control form-control-sm" placeholder="From" aria-label="City">
+				  </div>
+				  <div class="col-md-12">
+					<input type="text" class="form-control form-control-sm" placeholder="Subject" aria-label="State">
+				  </div>
+				  <div class="col-md-12">
+					<textarea class="form-control form-control-sm" id="editor" placeholder="Comments" rows="3"></textarea>
+				  </div>
+				</div>	
+			    <div class="d-grid gap-2 d-md-block mt-3">
+			      <button class="btn btn-sm btn-primary" type="button">Send</button>
+			      <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
+			    </div>
+			  </div>		  
+		    </div>			
+
+		  </div>
+		 
+		  <!-- activity -->
+		  <div class=" mt-3">
+		  		  		  
+		    <div class="d-flex align-items-center mt-1 mb-3">
+              <h6 class=""><i class="bi bi-calendar3"></i> Timeline</h6>
+		    </div>
+		  
+		    <div class="d-flex align-items-center mt-3 mb-3">
+		      <span class="">Displaying:&nbsp;</span>
+			    <a class="text-decoration-none" href="#">&nbsp;all activity&nbsp;<i class="bi bi-filter"></i></a>
+			  <span class="">&nbsp;by</span>
+		        <a class="text-decoration-none" href="#">&nbsp;everyone&nbsp;<i class="bi bi-filter"></i></a>
+			  <span class="">&nbsp;tagged</span>
+		        <a class="text-decoration-none" href="#">&nbsp;any&nbsp;<i class="bi bi-filter"></i></a>					
+		    </div>
+	  
+		    <!-- activityAlert -->	    
+			<div class="alert alert-primary alert-dismissible  fade show" role="alert">
+			  <p class=""><strong>For dynamic conversations</strong></p>
+			  <p>Send email, call, and text directly from Sell. Use email templates and call recordings for best results. <a href="#">Find out more</a></p>
+			  <div class="d-grid gap-2 d-md-block d-flex">
+				<button class="btn btn-sm btn-primary" type="button">Connect email address</button>
+				<button class="btn btn-sm btn-primary" type="button">Configure the call center</button>
+			  </div>
+			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		  		  
+		    <!-- Activity -->
+		    <ul class="list-group">
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-coin me-3"></i>userName moved to status <a href="#">Won</a> leadName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-check2-square me-3"></i>userName added a <a href="#">task</a> leadName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-people me-3"></i>userName added a <a href="#">collborator</a> leadName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-coin me-3"></i>userName added a <a href="#">documents</a> leadName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-check2-square me-3"></i>userName added a <a href="#">tasks</a> leadName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			</ul>
+					  
+		  </div>				
+		
+	    </div>
+	  
+	    <!-- column_3 -->
+        <div class="col-md-3 d-none d-md-block">
+
+		  <div class="accordion" id="accordionExample">
+		  
+		    <div class="accordion-item shadow-sm"> 
+			  <h2 class="accordion-header" id="headingOne">
+			  
+			  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collaborators" aria-expanded="true" aria-controls="collapseOne"
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+				<i class="bi bi-people me-3"></i>
+				  <div class="d-flex justify-content-between">
+				    <div>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Collaborators</h6>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
+						  No collaborators
+					    </small>
+				    </div>
+				  </div>
+			  </button>
+			  </h2>
+			  <div id="collaborators" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+		        <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><small>No Collaborators</small></div>			
+			    </div>
+			  </div>
+		    </div>
+		  
+		    <div class="accordion-item mt-3 border-top shadow-sm">
+			  <h2 class="accordion-header" id="headingTwo">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appointments" aria-expanded="false" aria-controls="collapseTwo"
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+			    <i class="bi bi-calendar me-3"></i>
+				  <div class="d-flex justify-content-between">
+				    <div>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Upcoming Appointments</h6>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
+						  No upcoming
+					    </small>
+				    </div>
+				  </div>
+			  </button>
+			  </h2>
+			  <div id="appointments" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+			    <div class="accordion-body">
+	
+				  <div class="text-center opacity-75 text-secondary"><small>No Upcoming Appointments</small></div>
+					
+			   </div>
+			  </div>
+		    </div>
+		  
+		    <div class="accordion-item mt-3 border-top shadow-sm">
+		      <h2 class="accordion-header" id="headingThree">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tasks" aria-expanded="false" aria-controls="collapseThree"
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+			  <i class="bi bi-check2-square me-3"></i>
+				<div class="d-flex justify-content-between">
+				  <div>
+					<h6 class="mb-0" style="font-size: 0.875rem;">Active Tasks</h6>
+					  <small class="d-block text-muted"  style=" font-size: 0.700em;">
+						No active
+					  </small>
+				  </div>
+				</div>
+			  </button>
+			  </h2>
+			  <div id="tasks" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+			    <div class="accordion-body">		  
+				  <div class="text-center opacity-75 text-secondary"><small>No Tasks</small></div>
+			    </div>
+			  </div>
+		    </div>
+			  
+		    <div class="accordion-item mt-3 border-top shadow-sm">
+			  <h2 class="accordion-header" id="headingFour">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#documents" aria-expanded="false" aria-controls="collapseFour" 
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+			    <i class="bi bi-files me-3"></i>
+				  <div class="d-flex justify-content-between">
+				   <div>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Examinations</h6>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
+						  No documents
+					    </small>
+				    </div>
+				  </div>
+			  </button>
+			  </h2>
+			  <div id="documents" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+			    <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><small>No Docs</small></div>
+			    </div>
+			  </div>
+		    </div>
+			
+			
+			<div class="accordion-item mt-3 border-top shadow-sm">
+			  <h2 class="accordion-header" id="headingFive">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#extra" aria-expanded="false" aria-controls="collapseFive" 
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+			    <i class="bi bi-journal-medical me-3"></i>
+				  <div class="d-flex justify-content-between">
+				   <div>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Medical history</h6>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
+						  Status Offline
+					    </small>
+				    </div>
+				  </div>
+			  </button>
+			  </h2>
+			  <div id="extra" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+			    <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><small>...</small></div>
+			    </div>
+			  </div>
+		    </div>
+			
+		  </div>
+	  
+	    </div>
+    
+	  </div>
+	
+	</div>
+  
+    <!-- editDealModal -->
+    <div class="modal fade" id="editDeal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Edit Deal</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Deal Name</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Value</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Added On</label>
+				  <input type="date" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Association</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Stage</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">Prospecting</option>
+					<option value="2">Qualified</option>
+					<option value="3">Quote</option>
+					<option value="4">Closure</option>
+					<option value="5">Won</option>
+					<option value="6">Unqualified</option>
+					<option value="7">Lost</option>
+				  </select>
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Source</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>No source</option>
+					<option value="1">Referral</option>
+					<option value="2">Word of mouth</option>
+					<option value="3">Our Website</option>
+					<option value="4">Newspaper ad</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Owner</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+			</main>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- editLeadModal -->
+    <div class="modal fade" id="editLead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Edit Lead</h5>
+		  </div>
+		  <div class="modal-body">
+			   <form class="row g-3">
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Fist Name</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Last Name</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Company</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Phone</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Mail</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Address</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>			
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Costumer Status</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected="1">Current Customer</option>
+					<option value="2">Past Customer</option>
+					<option value="3">Non-customer</option>							
+				  </select>		  
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Prospect Status</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected="1">Current Prospect</option>
+					<option value="2">Lost-prospect</option>
+					<option value="3">Non-prospect</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Owner</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">--</option>
+				  </select>	
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Industry</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">--</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Description</label>
+					<textarea class="form-control form-control-sm" id="#" rows="3" placeholder="Comments"></textarea>
+				</div>
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary d-block d-md-none">Convert</button>
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- searchContactsModal -->
+	<div class="modal fade" id="chooseContact" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="chooseContactModalLabel">Choose a Contact</h5>
+		  </div>
+		  <div class="modal-body">
+		    <form class="d-flex" role="search">
+			  <input class="form-control" type="search" placeholder="Type to filter by name" aria-label="Search">
+			</form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addContactPerson">Add Contact</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- addAppointmentModal -->
+	<div class="modal fade" id="addAppointment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add Appointment</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+				<div class="col-sm-8">
+				  <label for="Name" class="form-label">Title</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Date</label>
+				  <input type="date" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-6">
+				  <label for="Name" class="form-label">Time</label>
+				  <input type="time" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-6">
+				  <label for="Name" class="form-label">Time</label>
+				  <input type="time" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Alert</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Set alert</option>
+					<option value="1">No alert</option>
+					<option value="2">At Time of Event</option>
+					<option value="2">5 Minutes</option>
+					<option value="2">15 Minutes</option>
+					<option value="2">30 Minutes</option>
+					<option value="2">1 Hour</option>
+					<option value="2">1 Day</option>
+					<option value="2">1 Week</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Owner</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+	
+	<!-- addDocumentModal -->
+	<div class="modal fade" id="addDocument" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">File Upload</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+		  <div class="mt-3 mb-3">
+			<div class="input-group input-group-sm mb-3">
+			  <input type="file" class="form-control" id="inputGroupFile02">
+			  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+			</div>
+			<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+			  <div class="progress-bar" style="width: 0%">0%</div>
+			</div>				
+		  </div>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  
+	<!-- addContactModal -->
+	<div class="modal fade" id="addContactPerson" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add Contact</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Fist Name</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Last Name</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Company</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Phone</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Mail</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Address</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>			
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Costumer Status</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected="1">Current Customer</option>
+					<option value="2">Past Customer</option>
+					<option value="3">Non-customer</option>							
+				  </select>		  
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Prospect Status</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected="1">Current Prospect</option>
+					<option value="2">Lost-prospect</option>
+					<option value="3">Non-prospect</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Owner</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">--</option>
+				  </select>	
+				</div>
+				<div class="col-sm-3">
+				  <label for="Name" class="form-label">Industry</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">--</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Description</label>
+					<textarea class="form-control form-control-sm" id="#" rows="3" placeholder="Comments"></textarea>
+				</div>
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  
+	<!-- addNoteModal -->
+	<div class="modal fade" id="addNote" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add Note</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+				<div class="">
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				</form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  
+	<!-- addTaskModal -->
+	<div class="modal fade" id="addTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Description</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Date</label>
+				  <input type="date" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Time</label>
+				  <input type="time" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Association</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Owner</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  
+	<!-- deleteModal -->
+	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Delete</h1>
+		  </div>
+		  <div class="modal-body">
+			Are yout sure want to delete this lead?
+		  </div>
+		  <div class="modal-footer bg-light border-0">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">&nbsp&nbsp&nbspOk&nbsp;&nbsp&nbsp</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  	
+	<!-- addDeviceModal -->
+	<div class="modal fade" id="addDevice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add new device</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+			  	<div class="col-sm-12">
+				  <label for="Name" class="form-label">Serial</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Label</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Description</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="form-check">
+				  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+				  <label class="form-check-label" for="flexCheckIndeterminate">
+					Accept the terms
+				  </label>
+				</div>					
+			 <span class="text-dark">Disclaimer</span>
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- monitorModal -->
+	<div class="modal fade" id="monitor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Monitor</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		</div>
+	  </div>
+	</div>  	
+	
+	
+	<!--addOffcanvas-->
+	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+	  <div class="offcanvas-body small">
+	  <div class="container text-center">
+	    <div class="row row-cols-3">
+		  <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addNote" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-file-text-fill text-secondary"></i>
+			</a>
+		    <br><small>Notes</small>
+		  </div>
+		  <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addTask" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-check-square-fill text-secondary"></i>
+			</a>
+		    <br><small>Task</small>
+		  </div>
+		  <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addDocument" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-cloud-arrow-up-fill text-secondary"></i>
+			</a>
+		   <br><small>Document</small>
+		  </div>
+		  <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#chooseContact" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-person-plus-fill text-secondary"></i>
+			</a>
+		    <br><small>Contact: Person</small>
+		  </div>
+		  <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addAppointment" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-calendar-date-fill text-secondary"></i>
+			</a>
+		   <br><small>Appointment</small>
+		  </div>
+		   <div class="col mt-3">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-envelope-fill text-secondary"></i>
+			</a>
+		   <br><small>Email</small>
+		  </div>
+	    </div>
+	  </div>
+	  </div>
+	</div>  
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- next update -
+- limpeza de código
+- criar style.css
+- deixa prontos os fomulario, inputs, id, etc... para integração
+- ocultar div ao scrolar a página
+- exibir div scrolar a pagina
+- modal-header: botão voltar <i class="bi bi-arrow-left"></i> ao lado esquerdo do modal-title
+- accordion-header: adicionar um botão <i class="bi bi-plus-lg"></i> ao lado direito do titulo
+->
