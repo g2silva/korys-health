@@ -55,7 +55,7 @@
 	  
     </style>
   
-    <title>Patient Profile - View</title>
+    <title>View Patient</title>
   </head>
   <body>	
   
@@ -68,7 +68,7 @@
 		<div class="small lh-sm d-none d-md-block">
 		  <div class="d-flex justify-content-between" style="height: 12px">
 			<div>
-			  <span class="text-secondary" style="font-size: .700em;">Patient Profile</span>
+			  <span class="text-secondary" style="font-size: .700em;">Patient</span>
 			</div>
 		  </div>
 			<span class="d-block opacity-50 h5 align-items-md-end">Freddie Roberson</span>
@@ -76,22 +76,17 @@
 
 
 		<div class="d-grid gap-2 d-flex ms-3 d-none d-md-block">
-		  <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editLead"><i class="bi bi-pencil"></i> Edit Patient</button>
+		  <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editLead"> Edit</button>
           <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#monitor" type="button"><i class="bi bi-display"></i> Monitor</button>
         </div>
 	</div>
 		
 	<div class="dropdown me-3 d-none d-md-block">
 	  <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-		<i class="bi bi-plus-lg"></i> Add
+		<i class="bi bi-plus-lg"></i> Button extra
 	  </button>
 	  <ul class="dropdown-menu">
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addNote"><small>Notes</a></small></li>
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addTask"><small>Task</a></small></li>
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addDocument"><small>Documents</a></small></li>
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#chooseContact"><small>Contact: Person</a></small></li>
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addAppointment"><small>Appointments</a></small></li>
-		<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addDevice"><small>Device</a></small></li>
+		<li><a class="dropdown-item" href="#"><small>button-1</a></small></li>
 	  </ul>
 	</div>
 		
@@ -101,7 +96,7 @@
 			<ul class="dropdown-menu">
 			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Share</small></a></li>
 			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editLead"><small>Edit</small></a></li>
-			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete lead</small></a></li>
+			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete patient</small></a></li>
 			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Help</small></a></li>
 			</ul>
 		</div>
@@ -110,27 +105,24 @@
   </nav>
 
 	<!-- Content -->
-    <div class="container-fluid">  
+    <div class="container-fluid">  	  
 	
-	  <!-- addFab -->
-      <a class="fab d-block d-md-none d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="bi bi-plus-lg"></i></a> 
-	
-	  <div class="row mb-3">
+	  <div class="row">
 		 
-	    <!-- Alert 1 -->
+	    <!-- alert_1 -->
 	    <div class="container">
 		  <div class="alert alert-primary alert-dismissible fade show" role="alert">
 		    <i class="bi bi-check-circle-fill"></i> <i class="bi bi-exclamation-circle-fill"></i> <i class="bi bi-x-circle-fill"></i> It’s built with default Bootstrap components and utilities with little customization.
 		    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		  </div>
-	      </div>
+	    </div>
 	  	  
 	    <!-- column_1 -->
 		<div class="col-md-2">
 		
 		  <div class="text-center mb-3 d-block d-md-none">
 			<img id="brand-image" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" height="100px" width="100px">
-			<p class="text-center opacity-50 d-block d-md-none"><span class="fs-5">leadName</span> <br> <span><small>leadPhone</small></span><br></p>
+			<p class="text-center opacity-50 d-block d-md-none"><span class="fs-5">Freddie Roberson</span> <br> <span><small>Patient</small></span><br></p>
 		  </div> 	
 		  
 		  <br class="d-block d-md-none"> 
@@ -158,39 +150,78 @@
 		  </nav>		
 		
 		  <hr class="d-block d-md-none">	
-		  	
-		  <!-- patientName -->
+		  
+		  <!-- PATIENT_OWNERDOCTOR -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-person me-3"></i>
 		    <div class="small lh-sm">
 			  <div class="d-flex justify-content-between">
-			    <span class="text-dark">Freddie Roberson</span> 
+			    <span class="text-dark">Dr. Lucas Kupp</span> 
 			  </div>
 			  <span class="d-block opacity-50">		  
-			    <span><small>73</small></span><i class="bi bi-dot"></i>
-			    <span><small>Male</small></span><i class="bi bi-dot"></i>
-			    <span><small>Married</small></span>
+			    <span><small>Owner</small></span>
 			  </span>
+		    </div>
+		  </div>		 
+
+		<hr class="d-none d-md-block">
+		<br class="d-block d-md-none">			  
+				
+		  <!-- PATIENT_AGE -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">73</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Age</small></span>
 		    </div>
 		  </div>
 		
+		  <br> 
+		
+		  <!-- PATIENT_GENDER -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">Male</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Gender</small></span>
+		    </div>
+		  </div>
+		  
+		  <br> 
+		
+		  <!-- PATIENT_MARITALSTATUS -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">Maried</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Marital Status</small></span>
+		    </div>
+		  </div>
+		  
+		
 		  <hr class="d-none d-md-block">		
 		
-		  <!-- Phone -->
+		  <!-- PATIENT_PHONE -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <div class="pb-3 mb-0 small lh-sm w-100">
 			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-telephone-fill me-2"></i>+1 773-770-8599</span></a></span>		
 		     </div>
 		  </div>
 			
-		  <!-- Email -->
+		  <!-- PATIENT_EMAIL -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <div class="pb-3 mb-0 small lh-sm w-100">
 			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-envelope me-2"></i>janea_predovic@exemple.com</span></a></span>
 		    </div>
 		  </div>
 			
-		  <!-- Address -->
+		  <!-- PATIENT_ADRESS -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <i class="fs-5 bi bi-geo-alt d-block d-md-none me-3"></i>
 		      <div class="small lh-sm w-100">
@@ -201,22 +232,24 @@
 			  </div>
 		  </div>
 			
-		  <br> 
+		  <br>
 		
-		  <!-- Source -->
+		  <!-- PATIENT_RESPONSIBLE -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
 			    <span class="text-dark">...</span>
 			  </div>
-			  <span class="d-block opacity-50"><small>Responsible</small></span>
+			  <span class="d-block opacity-50"><small>Responsible</small><i class="bi bi-dot"></i>
+			  	<span><small>Daughter</small></span>
+				</span>
 		    </div>
 		  </div>
 		
-		  <br> 
+		  <br>
 		
-		  <!-- Alergies -->
+		  <!-- PATIENT_ALERGIES -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
 			  <div class="small lh-sm w-100">
@@ -229,7 +262,7 @@
 			
 		  <br>
 
-		  <!-- Company size -->
+		  <!-- PATIENT_COMIDITIES -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -239,7 +272,7 @@
 			  <span class="d-block opacity-50"><small>Comidities</small></span>
 		    </div>
 		  </div>
-		
+		  		
 		  <br>		
 		 	
 		  <!-- Added On -->
@@ -251,7 +284,7 @@
 			  </div>
 			  <span class="d-block opacity-50"><small>Added On</small></span>
 			</div>
-		  </div>
+		  </div>				
 				
 		  <br> 
 			
@@ -265,12 +298,9 @@
 			  <span class="d-block opacity-50"><small>Last Activity</small></span>
 		    </div>
 		  </div>
-			
-		  <hr class="d-block d-md-none">	
-		
-		
-		  <br><br><br> 
-		    <br><br><br> 
+		  
+				
+		  <br><br><br><br><br><br> 
 			
 	    </div>
 	 
@@ -380,7 +410,7 @@
 
 		  </div>
 		 
-		  <!-- activity -->
+		  <!-- TimeLine -->
 		  <div class=" mt-3">
 		  		  		  
 		    <div class="d-flex align-items-center mt-1 mb-3">
@@ -396,7 +426,7 @@
 		        <a class="text-decoration-none" href="#">&nbsp;any&nbsp;<i class="bi bi-filter"></i></a>					
 		    </div>
 	  
-		    <!-- activityAlert -->	    
+		    <!-- alert_2 -->	    
 			<div class="alert alert-primary alert-dismissible  fade show" role="alert">
 			  <p class=""><strong>For dynamic conversations</strong></p>
 			  <p>Send email, call, and text directly from Sell. Use email templates and call recordings for best results. <a href="#">Find out more</a></p>
@@ -440,6 +470,7 @@
 
 		  <div class="accordion" id="accordionExample">
 		  
+            <!-- collaboratorAccordion -->	
 		    <div class="accordion-item shadow-sm"> 
 			  <h2 class="accordion-header" id="headingOne">
 			  
@@ -460,12 +491,13 @@
 			  </button>
 			  </h2>
 			  <div id="collaborators" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-		        <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><small>No Collaborators</small></div>			
+			    <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href=""data-bs-toggle="modal" data-bs-target="#addCollaborator">new collaborator</a></div>
 			    </div>
 			  </div>
 		    </div>
 		  
+		    <!-- appointmentsAccordion -->
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingTwo">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appointments" aria-expanded="false" aria-controls="collapseTwo"
@@ -486,13 +518,12 @@
 			  </h2>
 			  <div id="appointments" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-	
-				  <div class="text-center opacity-75 text-secondary"><small>No Upcoming Appointments</small></div>
-					
-			   </div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addAppointment">new appointment</a></div>
+			    </div>
 			  </div>
 		    </div>
-		  
+			
+            <!-- taskAccordion -->	
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 		      <h2 class="accordion-header" id="headingThree">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tasks" aria-expanded="false" aria-controls="collapseThree"
@@ -512,12 +543,13 @@
 			  </button>
 			  </h2>
 			  <div id="tasks" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-			    <div class="accordion-body">		  
-				  <div class="text-center opacity-75 text-secondary"><small>No Tasks</small></div>
+			    <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addTask">new task</a></div>
 			    </div>
 			  </div>
 		    </div>
-			  
+			 
+			<!-- examinationsAccordion --> 
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFour">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#documents" aria-expanded="false" aria-controls="collapseFour" 
@@ -538,12 +570,12 @@
 			  </h2>
 			  <div id="documents" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><small>No Docs</small></div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addDocument">new examinations</a></div>
 			    </div>
 			  </div>
 		    </div>
 			
-			
+			<!-- medicalHistoryAccordion -->
 			<div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFive">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#extra" aria-expanded="false" aria-controls="collapseFive" 
@@ -555,16 +587,38 @@
 				  <div class="d-flex justify-content-between">
 				   <div>
 					  <h6 class="mb-0" style="font-size: 0.875rem;">Medical history</h6>
-					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
-						  Status Offline
-					    </small>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">No history</small>
 				    </div>
 				  </div>
 			  </button>
 			  </h2>
 			  <div id="extra" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><small>...</small></div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addNote">new history</a></div>
+			    </div>
+			  </div>
+		    </div>
+			
+			<!-- deviceAccordion -->
+			<div class="accordion-item mt-3 border-top shadow-sm">
+			  <h2 class="accordion-header" id="headingSix">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#device" aria-expanded="false" aria-controls="collapseSix" 
+			  style="
+			    padding-top: 10px;
+                padding-bottom: 10px;
+			  ">
+			    <i class="bi bi-option me-3"></i>
+				  <div class="d-flex justify-content-between">
+				   <div>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Device</h6>
+					    <small class="d-block text-muted"  style=" font-size: 0.700em;">No device</small>
+				    </div>
+				  </div>
+			  </button>
+			  </h2>
+			  <div id="device" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+			    <div class="accordion-body">
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addDevice">new device</a></div>
 			    </div>
 			  </div>
 		    </div>
@@ -575,14 +629,17 @@
     
 	  </div>
 	
+	  <!-- Offcanvas-botton -->
+      <a class="fab d-block d-md-none d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="bi bi-plus-lg"></i></a> 
+	
 	</div>
   
-    <!-- editDealModal -->
-    <div class="modal fade" id="editDeal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- editPatientModal -->
+    <div class="modal fade" id="editLead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
 		<div class="modal-content">
 		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Edit Deal</h5>
+			<h5 class="modal-title" id="staticBackdropLabel">Edit Patient</h5>
 		  </div>
 		  <div class="modal-body">
 			  <form class="row g-3">
@@ -638,104 +695,6 @@
 		  <div class="modal-footer bg-light">
 			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
 			<button type="button" class="btn btn-sm btn-primary">Save</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	
-	<!-- editLeadModal -->
-    <div class="modal fade" id="editLead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
-		<div class="modal-content">
-		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Edit Lead</h5>
-		  </div>
-		  <div class="modal-body">
-			   <form class="row g-3">
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Fist Name</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Last Name</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Company</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Phone</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Mail</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Address</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>			
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Costumer Status</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected="1">Current Customer</option>
-					<option value="2">Past Customer</option>
-					<option value="3">Non-customer</option>							
-				  </select>		  
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Prospect Status</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected="1">Current Prospect</option>
-					<option value="2">Lost-prospect</option>
-					<option value="3">Non-prospect</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Owner</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">--</option>
-				  </select>	
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Industry</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">--</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Description</label>
-					<textarea class="form-control form-control-sm" id="#" rows="3" placeholder="Comments"></textarea>
-				</div>
-			  </form>
-		  </div>
-		  <div class="modal-footer bg-light">
-			<button type="button" class="btn btn-sm btn-outline-primary d-block d-md-none">Convert</button>
-			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary">Save</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	
-	<!-- searchContactsModal -->
-	<div class="modal fade" id="chooseContact" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
-		<div class="modal-content">
-		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="chooseContactModalLabel">Choose a Contact</h5>
-		  </div>
-		  <div class="modal-body">
-		    <form class="d-flex" role="search">
-			  <input class="form-control" type="search" placeholder="Type to filter by name" aria-label="Search">
-			</form>
-		  </div>
-		  <div class="modal-footer bg-light">
-			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addContactPerson">Add Contact</button>
 		  </div>
 		</div>
 	  </div>
@@ -821,84 +780,7 @@
 		  </div>
 		</div>
 	  </div>
-	</div>  
-  
-	<!-- addContactModal -->
-	<div class="modal fade" id="addContactPerson" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
-		<div class="modal-content">
-		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Add Contact</h5>
-		  </div>
-		  <div class="modal-body">
-			  <form class="row g-3">
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Fist Name</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Last Name</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Company</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Phone</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Mail</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Address</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>			
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Costumer Status</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected="1">Current Customer</option>
-					<option value="2">Past Customer</option>
-					<option value="3">Non-customer</option>							
-				  </select>		  
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Prospect Status</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected="1">Current Prospect</option>
-					<option value="2">Lost-prospect</option>
-					<option value="3">Non-prospect</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Owner</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">--</option>
-				  </select>	
-				</div>
-				<div class="col-sm-3">
-				  <label for="Name" class="form-label">Industry</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">--</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Description</label>
-					<textarea class="form-control form-control-sm" id="#" rows="3" placeholder="Comments"></textarea>
-				</div>
-			  </form>
-		  </div>
-		  <div class="modal-footer bg-light">
-			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary">Save</button>
-		  </div>
-		</div>
-	  </div>
-	</div>  
+	</div>   
   
 	<!-- addNoteModal -->
 	<div class="modal fade" id="addNote" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -973,7 +855,7 @@
 			<h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Delete</h1>
 		  </div>
 		  <div class="modal-body">
-			Are yout sure want to delete this lead?
+			Are yout sure want to delete this patient?
 		  </div>
 		  <div class="modal-footer bg-light border-0">
 			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
@@ -1038,7 +920,6 @@
 	  </div>
 	</div>  	
 	
-	
 	<!--addOffcanvas-->
 	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
 	  <div class="offcanvas-body small">
@@ -1097,5 +978,4 @@
 - exibir div scrolar a pagina
 - modal-header: botão voltar <i class="bi bi-arrow-left"></i> ao lado esquerdo do modal-title
 - accordion-header: adicionar um botão <i class="bi bi-plus-lg"></i> ao lado direito do titulo
-
 ->
