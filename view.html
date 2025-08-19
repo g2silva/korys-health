@@ -53,6 +53,10 @@
          height: 25vh;
 	  }
 	  
+	  
+		function myFunction() {
+			window.print();
+		}
     </style>
   
     <title>View Patient</title>
@@ -80,42 +84,32 @@
           <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#monitor" type="button"><i class="bi bi-display"></i> Monitor</button>
         </div>
 	</div>
-		
-	<div class="dropdown me-3 d-none d-md-block">
-	  <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-		<i class="bi bi-plus-lg"></i> Button extra
-	  </button>
-	  <ul class="dropdown-menu">
-		<li><a class="dropdown-item" href="#"><small>button-1</a></small></li>
-	  </ul>
+			
+	<div class="dropdown d-flex align-items-center">
+	  <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="h5 bi bi-three-dots-vertical"></i></a>
+	    <ul class="dropdown-menu">
+		  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editLead"><small>Edit</small></a></li>
+		  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#monitor"><small>Monitor</small></a></li>
+	      <li><a class="dropdown-item" href="#"><small>Export</small></a></li>
+		  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete</small></a></li>
+		  <li><a class="dropdown-item" href="#"><small>Help</small></a></li>
+		</ul>
 	</div>
-		
-	<div class="d-flex align-items-center d-block d-md-none">
-		<div class="dropdown">
-		  <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="h5 bi bi-three-dots-vertical"></i></a>
-			<ul class="dropdown-menu">
-			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Share</small></a></li>
-			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editLead"><small>Edit</small></a></li>
-			  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete patient</small></a></li>
-			  <li><a class="dropdown-item d-block d-md-none" href="#"><small>Help</small></a></li>
-			</ul>
-		</div>
-    </div>
-	
+
   </nav>
+
+  <!-- alert_1 -->
+   <div class="container-fluid">
+     <div class="alert alert-primary alert-dismissible fade show" role="alert">
+	   <i class="bi bi-check-circle-fill"></i> <i class="bi bi-exclamation-circle-fill"></i> <i class="bi bi-x-circle-fill"></i> It’s built with default Bootstrap components and utilities with little customization.
+	   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	 </div>
+	</div>
 
 	<!-- Content -->
     <div class="container-fluid">  	  
 	
 	  <div class="row">
-		 
-	    <!-- alert_1 -->
-	    <div class="container">
-		  <div class="alert alert-primary alert-dismissible fade show" role="alert">
-		    <i class="bi bi-check-circle-fill"></i> <i class="bi bi-exclamation-circle-fill"></i> <i class="bi bi-x-circle-fill"></i> It’s built with default Bootstrap components and utilities with little customization.
-		    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		  </div>
-	    </div>
 	  	  
 	    <!-- column_1 -->
 		<div class="col-md-2">
@@ -307,60 +301,60 @@
 	    <!-- column_2 -->
         <div class="col d-none d-md-block">
 			
-			<!-- Vital Signs -->
-			<div class="row">
-			  <div class="col-sm-2">
-				<div class="card border-primary">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-heart-pulse"></i> <small>HR</small></h6>
-					<p class="card-text">...</p>
-				  </div>
+		  <!-- Vital Signs -->
+		  <div class="row">
+			<div class="col-sm-2">
+			  <div class="card border-primary">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-heart-pulse"></i> <small>HR</small></h6>
+				  <p class="card-text">...</p>
 				</div>
 			  </div>
-			  <div class="col-sm-2" href="#">
-				<div class="card border-primary">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-compass"></i> <small>BP</small></h6>
-					<p class="card-text">...</p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-sm-2">
-				<div class="card border-primary">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-lungs"></i> <small>RR</small></h6>
-					<p class="card-text">...</p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-sm-2 ">
-				<div class="card border-warning">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-moisture"></i> <small>O2</small></h6>
-					<p class="card-text">...</p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-sm-2">
-				<div class="card border-success">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-thermometer-half"></i> <small>T</small></h6>
-					<p class="card-text">...</p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-sm-2">
-				<div class="card border-danger">
-				  <div class="card-body">
-					<h6 class="card-title"><i class="bi bi-pentagon"></i> <small>Score</small></h6>
-					<p class="card-text">...</p>
-				  </div>
-				</div>
-			  </div>
-
 			</div>
+			<div class="col-sm-2" href="#">
+			  <div class="card border-primary">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-compass"></i> <small>BP</small></h6>
+				  <p class="card-text">...</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-2">
+			  <div class="card border-primary">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-lungs"></i> <small>RR</small></h6>
+				  <p class="card-text">...</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-2 ">
+			  <div class="card border-warning">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-moisture"></i> <small>O2</small></h6>
+				  <p class="card-text">...</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-2">
+			  <div class="card border-success">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-thermometer-half"></i> <small>T</small></h6>
+				  <p class="card-text">...</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-2">
+			  <div class="card border-danger">
+			    <div class="card-body">
+				  <h6 class="card-title"><i class="bi bi-pentagon"></i> <small>Score</small></h6>
+				  <p class="card-text">...</p>
+				</div>
+			  </div>
+			</div>
+
+	      </div>
 				
-			<br>		
+		  <br>		
 			
 		  <!-- nav-tab -->
 	      <ul class="nav nav-tabs" id="myTab" role="tablist ">
@@ -643,49 +637,81 @@
 		  </div>
 		  <div class="modal-body">
 			  <form class="row g-3">
+			  
+			  	<h6>Personal Info</h6>
 				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Deal Name</label>
+				  <label for="Name" class="form-label">Full Name</label>
 				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Value</label>
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
-				</div>
-				<div class="col-sm-6">
-				  <label for="Name" class="form-label">Added On</label>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Birth Date</label>
 				  <input type="date" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Gender</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">Male</option>
+					<option value="2">Female</option>
+				  </select>
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Marital Status</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">Married</option>
+					<option value="2">Widowed</option>
+					<option value="3">Separated</option>
+					<option value="4">Divorced</option>
+					<option value="5">Single</option>
+				  </select>
+				</div>
+
+				<h6>Contact</h6>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Phone</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Mail</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
 				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Association</label>
+				  <label for="Name" class="form-label">Address</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+
+				<h6>Medical Information</h6>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Comidities</label>
+				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">Alergies</label>
+				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>
+				
+				<h6>Responsible</h6>
+				 <div class="col-sm-4">
+				  <label for="Name" class="form-label">Name</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+				  </select>	
+				</div>
+				 <div class="col-sm-4">
+				  <label for="Name" class="form-label">Type</label>
 				  <select class="form-select form-select-sm" aria-label="Default select example">
 					<option selected>--</option>
 				  </select>	
 				</div>
 				<div class="col-sm-4">
-				  <label for="Name" class="form-label">Stage</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>Open this select menu</option>
-					<option value="1">Prospecting</option>
-					<option value="2">Qualified</option>
-					<option value="3">Quote</option>
-					<option value="4">Closure</option>
-					<option value="5">Won</option>
-					<option value="6">Unqualified</option>
-					<option value="7">Lost</option>
-				  </select>
+				  <label for="Name" class="form-label">Phone</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
+				
+				<h6>Owner Doctor</h6>
 				<div class="col-sm-4">
-				  <label for="Name" class="form-label">Source</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>No source</option>
-					<option value="1">Referral</option>
-					<option value="2">Word of mouth</option>
-					<option value="3">Our Website</option>
-					<option value="4">Newspaper ad</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-4">
-				  <label for="Name" class="form-label">Owner</label>
+				  <label for="Name" class="form-label">Name</label>
 				  <select class="form-select form-select-sm" aria-label="Default select example">
 					<option selected>--</option>
 				  </select>	
