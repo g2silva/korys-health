@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 	<!-- future style.css -->
     <style>
@@ -50,7 +50,7 @@
 	  }
 	
 	  .offcanvas-bottom {
-         height: 25vh;
+         height: 33vh;
 	  }
 	  
 	  
@@ -145,49 +145,42 @@
 		
 		  <hr class="d-block d-md-none">	
 		  
-		  <!-- PATIENT_OWNERDOCTOR -->
-		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-person me-3"></i>
-		    <div class="small lh-sm">
-			  <div class="d-flex justify-content-between">
-			    <span class="text-dark">Dr. Lucas Kupp</span> 
-			  </div>
-			  <span class="d-block opacity-50">		  
-			    <span><small>Owner</small></span>
-			  </span>
-		    </div>
-		  </div>		 
-
-		<hr class="d-none d-md-block">
-		<br class="d-block d-md-none">			  
-				
+		 				
 		  <!-- PATIENT_AGE -->
 		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		  	<i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">Male</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Sex</small></span>
+		    </div>
+		    <i class="fs-5 bi bi-calendar-event d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
 			    <span class="text-dark">73</span>
 			  </div>
 			  <span class="d-block opacity-50"><small>Age</small></span>
 		    </div>
-		  </div>
-		
-		  <br> 
-		
-		  <!-- PATIENT_GENDER -->
-		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+			<i class="fs-5 bi bi-bucket d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
-			    <span class="text-dark">Male</span>
+			    <span class="text-dark">230</span>
 			  </div>
-			  <span class="d-block opacity-50"><small>Gender</small></span>
+			  <span class="d-block opacity-50"><small>Weight</small></span>
+		    </div>
+			<i class="fs-5 bi bi-person-arms-up d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">6'1</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Height</small></span>
 		    </div>
 		  </div>
 		  
 		  <br> 
 		
-		  <!-- PATIENT_MARITALSTATUS -->
+		  <!-- PATIENT_MARITAL_STATUS -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -241,7 +234,8 @@
 		    </div>
 		  </div>
 		
-		  <br>
+		  <br class="d-block d-md-none">
+		  <hr class="d-none d-md-block">
 		
 		  <!-- PATIENT_ALERGIES -->
 		  <div class="d-flex text-muted">
@@ -254,35 +248,22 @@
 			  </div>
 		  </div>
 			
-		  <br>
-
-		  <!-- PATIENT_COMIDITIES -->
-		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
-		    <div class="small lh-sm w-100">
-			  <div class="d-flex">
-			    <span class="text-dark">...</span>
-			  </div>
-			  <span class="d-block opacity-50"><small>Comidities</small></span>
-		    </div>
-		  </div>
-		  		
 		  <br>		
 		 	
-		  <!-- Added On -->
+		  <!-- PATIENT_RESGISTERED -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-plus-lg d-block d-md-none me-3"></i>
 			<div class="small lh-sm w-100">
 			  <div class="d-flex justify-content-between">
 				<span class="text-dark">10/21/2018</span>
 			  </div>
-			  <span class="d-block opacity-50"><small>Added On</small></span>
+			  <span class="d-block opacity-50"><small>Registered Date</small></span>
 			</div>
 		  </div>				
 				
 		  <br> 
 			
-		  <!-- Last Activity -->
+		  <!-- PATIENT_ACTIVITY -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-clock d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -293,6 +274,20 @@
 		    </div>
 		  </div>
 		  
+		  <br> 		  
+		  
+		  <!-- PATIENT_ASSIGNED_DOCTOR -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-person me-3"></i>
+		    <div class="small lh-sm">
+			  <div class="d-flex justify-content-between">
+			    <span class="text-dark">Dr. Lucas Kupp</span> 
+			  </div>
+			  <span class="d-block opacity-50">		  
+			    <span><small>Assigned Doctor</small></span>
+			  </span>
+		    </div>
+		  </div>
 				
 		  <br><br><br><br><br><br> 
 			
@@ -304,7 +299,7 @@
 		  <!-- Vital Signs -->
 		  <div class="row">
 			<div class="col-sm-2">
-			  <div class="card border-primary">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-heart-pulse"></i> <small>HR</small></h6>
 				  <p class="card-text">...</p>
@@ -312,7 +307,7 @@
 			  </div>
 			</div>
 			<div class="col-sm-2" href="#">
-			  <div class="card border-primary">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-compass"></i> <small>BP</small></h6>
 				  <p class="card-text">...</p>
@@ -320,7 +315,7 @@
 			  </div>
 			</div>
 			<div class="col-sm-2">
-			  <div class="card border-primary">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-lungs"></i> <small>RR</small></h6>
 				  <p class="card-text">...</p>
@@ -328,7 +323,7 @@
 			  </div>
 			</div>
 			<div class="col-sm-2 ">
-			  <div class="card border-warning">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-moisture"></i> <small>O2</small></h6>
 				  <p class="card-text">...</p>
@@ -336,7 +331,7 @@
 			  </div>
 			</div>
 			<div class="col-sm-2">
-			  <div class="card border-success">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-thermometer-half"></i> <small>T</small></h6>
 				  <p class="card-text">...</p>
@@ -344,7 +339,7 @@
 			  </div>
 			</div>
 			<div class="col-sm-2">
-			  <div class="card border-danger">
+			  <div class="card">
 			    <div class="card-body">
 				  <h6 class="card-title"><i class="bi bi-pentagon"></i> <small>Score</small></h6>
 				  <p class="card-text">...</p>
@@ -359,10 +354,13 @@
 		  <!-- nav-tab -->
 	      <ul class="nav nav-tabs" id="myTab" role="tablist ">
 		    <li class="nav-item" role="presentation">
-			  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#add_note" type="button" role="tab" aria-controls="home" aria-selected="true">Add a Note</button>
+			  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#add_note" type="button" role="tab" aria-controls="add_note" aria-selected="true">Add a Note</button>
 		    </li>
 		    <li class="nav-item" role="presentation">
-			  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#send_email" type="button" role="tab" aria-controls="profile" aria-selected="false">Send an Email</button>
+			  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#examination-request" type="button" role="tab" aria-controls="examination-request" aria-selected="false">Examination Request</button>
+		    </li>
+			 <li class="nav-item" role="presentation">
+			  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#prescriptions" type="button" role="tab" aria-controls="prescriptions" aria-selected="false">Prescriptions</button>
 		    </li>
 		  </ul>
 		
@@ -370,19 +368,18 @@
 		  <div class="tab-content border border-top-0 shadow-sm" id="myTabContent">
 		  
 		    <!-- note-tab -->
-		    <div class="tab-pane fade show active" id="add_note" role="tabpanel" aria-labelledby="home-tab">
+		    <div class="tab-pane fade show active" id="add_note" role="tabpanel" aria-labelledby="add_note">
 			  <div class="p-3">
 			    <textarea class="form-control form-control-sm" id="#" rows="6" placeholder="Comments"></textarea>
-			    <div class="d-grid gap-2 d-md-block mt-3">
+			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 				  <button class="btn btn-sm btn-primary" type="button">Save</button>
 				  <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
 			    </div>
 			  </div>			  
-		    </div>
+		    </div>		
 			
-			
-		    <!-- email-tab -->
-		    <div class="tab-pane fade" id="send_email" role="tabpanel" aria-labelledby="profile-tab">	  
+		    <!-- examination-request-tab -->
+		    <div class="tab-pane fade" id="examination-request" role="tabpanel" aria-labelledby="examination-request">	  
 			  <div class="p-3">
 				<div class="row g-1">
 				  <div class="col-md-12">
@@ -395,12 +392,30 @@
 					<textarea class="form-control form-control-sm" id="editor" placeholder="Comments" rows="3"></textarea>
 				  </div>
 				</div>	
-			    <div class="d-grid gap-2 d-md-block mt-3">
+			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 			      <button class="btn btn-sm btn-primary" type="button">Send</button>
 			      <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
 			    </div>
 			  </div>		  
-		    </div>			
+		    </div>
+
+		    <!-- prescriptions-tab -->
+		    <div class="tab-pane fade" id="prescriptions" role="tabpanel" aria-labelledby="prescriptions">	  
+			  <div class="p-3">
+				<div class="row g-1">
+				  <div class="col-md-12">
+					<input type="text" class="form-control form-control-sm" placeholder="From" aria-label="City">
+				  </div>
+				  <div class="col-md-12">
+					<textarea class="form-control form-control-sm" id="editor" placeholder="Comments" rows="3"></textarea>
+				  </div>
+				</div>	
+			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+			      <button class="btn btn-sm btn-primary" type="button">Send</button>
+			      <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
+			    </div>
+			  </div>		  
+		    </div>				
 
 		  </div>
 		 
@@ -464,7 +479,7 @@
 
 		  <div class="accordion" id="accordionExample">
 		  
-            <!-- collaboratorAccordion -->	
+            <!-- health-team-accordion -->	
 		    <div class="accordion-item shadow-sm"> 
 			  <h2 class="accordion-header" id="headingOne">
 			  
@@ -476,9 +491,9 @@
 				<i class="bi bi-people me-3"></i>
 				  <div class="d-flex justify-content-between">
 				    <div>
-					  <h6 class="mb-0" style="font-size: 0.875rem;">Collaborators</h6>
+					  <h6 class="mb-0" style="font-size: 0.875rem;">Health Team</h6>
 					    <small class="d-block text-muted"  style=" font-size: 0.700em;">
-						  No collaborators
+						  No members
 					    </small>
 				    </div>
 				  </div>
@@ -486,12 +501,12 @@
 			  </h2>
 			  <div id="collaborators" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href=""data-bs-toggle="modal" data-bs-target="#addCollaborator">new collaborator</a></div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href=""data-bs-toggle="modal" data-bs-target="#addCollaborator">add member</a></div>
 			    </div>
 			  </div>
 		    </div>
 		  
-		    <!-- appointmentsAccordion -->
+		    <!-- appointments-accordion -->
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingTwo">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appointments" aria-expanded="false" aria-controls="collapseTwo"
@@ -517,7 +532,7 @@
 			  </div>
 		    </div>
 			
-            <!-- taskAccordion -->	
+            <!-- treatament-planning-accordion -->	
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 		      <h2 class="accordion-header" id="headingThree">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tasks" aria-expanded="false" aria-controls="collapseThree"
@@ -528,7 +543,7 @@
 			  <i class="bi bi-check2-square me-3"></i>
 				<div class="d-flex justify-content-between">
 				  <div>
-					<h6 class="mb-0" style="font-size: 0.875rem;">Active Tasks</h6>
+					<h6 class="mb-0" style="font-size: 0.875rem;">Treatment Planning</h6>
 					  <small class="d-block text-muted"  style=" font-size: 0.700em;">
 						No active
 					  </small>
@@ -538,12 +553,12 @@
 			  </h2>
 			  <div id="tasks" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addTask">new task</a></div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href="" data-bs-toggle="modal" data-bs-target="#addTask">new treatment</a></div>
 			    </div>
 			  </div>
 		    </div>
 			 
-			<!-- examinationsAccordion --> 
+			<!-- examinations-accordion --> 
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFour">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#documents" aria-expanded="false" aria-controls="collapseFour" 
@@ -569,7 +584,7 @@
 			  </div>
 		    </div>
 			
-			<!-- medicalHistoryAccordion -->
+			<!-- medical-history-accordion -->
 			<div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFive">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#extra" aria-expanded="false" aria-controls="collapseFive" 
@@ -593,7 +608,7 @@
 			  </div>
 		    </div>
 			
-			<!-- deviceAccordion -->
+			<!-- device-accordion -->
 			<div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingSix">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#device" aria-expanded="false" aria-controls="collapseSix" 
@@ -724,15 +739,14 @@
 		  </div>
 		</div>
 	  </div>
-	</div>
-	
+	</div>	
 	
 	<!-- addCollaboratorModal -->
 	<div class="modal fade" id="addCollaborator" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
 		<div class="modal-content">
 		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Add Collaborator</h5>
+			<h5 class="modal-title" id="staticBackdropLabel">Add Member</h5>
 		  </div>
 		  <div class="modal-body">
 			  <form class="row g-3">
@@ -850,19 +864,29 @@
 	  </div>
 	</div>   
   
-	<!-- addNoteModal -->
+	<!-- addMedicalHistoryModal -->
 	<div class="modal fade" id="addNote" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
 		<div class="modal-content">
 		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Add Note</h5>
+			<h5 class="modal-title" id="staticBackdropLabel">Add Medical History</h5>
 		  </div>
 		  <div class="modal-body">
 			  <form class="row g-3">
-				<div class="">
-				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+			  	<div class="col-sm-12">
+				  <label for="Name" class="form-label">Type</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+					<option value="1">Previous Illnesses</option>
+					<option value="2">Hospitalizations</option>
+					<option value="3">Surgeries</option>
+				  </select>		  
 				</div>
-				</form>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Information</label>
+				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>			
+			  </form>
 		  </div>
 		  <div class="modal-footer bg-light">
 			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
@@ -872,7 +896,7 @@
 	  </div>
 	</div>  
   
-	<!-- addTaskModal -->
+	<!-- addCarePlanModal -->
 	<div class="modal fade" id="addTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
 		<div class="modal-content">
@@ -993,41 +1017,59 @@
 	  <div class="offcanvas-body small">
 	  <div class="container text-center">
 	    <div class="row row-cols-3">
+			<div class="col mt-3">
+		    <a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-envelope-fill text-secondary"></i>
+			</a>
+		   <br><small>Note</small>
+		  </div>
+		  <div class="col mt-3">
+		    <a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-envelope-fill text-secondary"></i>
+			</a>
+		   <br><small>Examinations Request</small>
+		  </div>
+		  		  <div class="col mt-3">
+		    <a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
+			  <i class="fs-5 h3-md bi bi-envelope-fill text-secondary"></i>
+			</a>
+		   <br><small>Prescriptions</small>
+		  </div>
 		  <div class="col mt-3">
 		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addNote" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-file-text-fill text-secondary"></i>
 			</a>
-		    <br><small>Notes</small>
+		    <br><small>Member</small>
 		  </div>
 		  <div class="col mt-3">
 		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addTask" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-check-square-fill text-secondary"></i>
 			</a>
-		    <br><small>Task</small>
+		    <br><small>Appointments</small>
 		  </div>
 		  <div class="col mt-3">
 		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addDocument" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-cloud-arrow-up-fill text-secondary"></i>
 			</a>
-		   <br><small>Document</small>
+		   <br><small>Tratament Planning</small>
 		  </div>
 		  <div class="col mt-3">
 		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#chooseContact" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-person-plus-fill text-secondary"></i>
 			</a>
-		    <br><small>Contact: Person</small>
+		    <br><small>Examinations</small>
 		  </div>
 		  <div class="col mt-3">
 		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addAppointment" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-calendar-date-fill text-secondary"></i>
 			</a>
-		   <br><small>Appointment</small>
+		   <br><small>Medical History</small>
 		  </div>
-		   <div class="col mt-3">
-		  	<a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
+		  <div class="col mt-3">
+		    <a  type="button" class="btn btn-light rounded-circle" href="mailto:deal@mail.com?subject=dealName&body=dealContent" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-envelope-fill text-secondary"></i>
 			</a>
-		   <br><small>Email</small>
+		   <br><small>Device</small>
 		  </div>
 	    </div>
 	  </div>
