@@ -50,7 +50,7 @@
 	  }
 	
 	  .offcanvas-bottom {
-         height: 40vh;
+         height: 35vh;
 	  }
 	  
 	  
@@ -59,7 +59,7 @@
 		}
     </style>
   
-    <title>View Patient</title>
+    <title>namePatient</title>
   </head>
   <body>	
   
@@ -121,7 +121,7 @@
 		  
 		  <br class="d-block d-md-none"> 
 		  
-		  <!-- NAV -->
+		  <!-- Button Action Contact -->
 		  <nav class="nav justify-content-around mb-3" aria-label="Secondary navigation">
 		    <div class="text-center lh-md">
 			<a  type="button" class="btn btn-light rounded-circle d-block d-md-none" href="tel:+00 (00) 00000-0000" class="nav-link px-0 align-middle">
@@ -177,10 +177,23 @@
 			  <span class="d-block opacity-50"><small>Height</small></span>
 		    </div>
 		  </div>
+		 
+		 <br> 
 		  
-		  <br> 
+		 <!-- patientBloodGroup -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi-droplet d-block d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">O+</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Blod Group</small></span>
+		    </div>
+		  </div>
+		  
+		  <br>
 		
-		  <!-- PATIENT_MARITAL_STATUS -->
+		  <!-- patientMaritalStatus -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -194,7 +207,7 @@
 		
 		  <hr class="d-none d-md-block">		
 		
-		  <!-- patientHome -->
+		  <!-- patientPhone -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <div class="pb-3 mb-0 small lh-sm w-100">
 			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-telephone-fill me-2"></i>+1 773-770-8599</span></a></span>		
@@ -263,7 +276,7 @@
 			
 		  <br>		
 		 	
-		  <!-- PATIENT_RESGISTERED -->
+		  <!-- patientRegistered -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-plus-lg d-block d-md-none me-3"></i>
 			<div class="small lh-sm w-100">
@@ -289,7 +302,7 @@
 		  
 		  <br> 		  
 		  
-		  <!-- PATIENT_ASSIGNED_DOCTOR -->
+		  <!-- patientAssignedDoctor -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-person me-3"></i>
 		    <div class="small lh-sm">
@@ -1245,7 +1258,7 @@
 <!-- next update -
 - limpeza e correção de código
 - criar style.css
-- deixa prontos os fomulario, inputs, id, etc... para integração
+- deixa prontos os fomulario, inputs, id, labels, placeholders, etc... para integração
 - ocultar div ao scrolar a página
 - exibir div scrolar a pagina
 - modal-header: botão voltar <i class="bi bi-arrow-left"></i> ao lado esquerdo do modal-title
@@ -1257,5 +1270,5 @@
 	reset-password
 	forgot-password
 	dashboard
+	monitor
 ->
-
