@@ -80,7 +80,7 @@
 
 
 		<div class="d-grid gap-2 d-flex ms-3 d-none d-md-block">
-		  <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editLead"> Edit Patient</button>
+		  <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#editPatient"> Edit Patient</button>
           <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#monitor" type="button"><i class="bi bi-display"></i> Monitor</button>
         </div>
 	</div>
@@ -88,7 +88,7 @@
 	<div class="dropdown d-flex align-items-center">
 	  <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="h5 bi bi-three-dots-vertical"></i></a>
 	    <ul class="dropdown-menu">
-		  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editLead"><small>Edit</small></a></li>
+		  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#editPatient"><small>Edit</small></a></li>
 		  <li><a class="dropdown-item d-block d-md-none" href="#" data-bs-toggle="modal" data-bs-target="#monitor"><small>Monitor</small></a></li>
 	      <li><a class="dropdown-item" href="#"><small>Export</small></a></li>
 		  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete"><small>Delete</small></a></li>
@@ -98,8 +98,8 @@
 
   </nav>
 
-  <!-- alert_1 -->
-   <div class="container-fluid">
+    <!-- alert_1 -->
+    <div class="container-fluid">
      <div class="alert alert-primary alert-dismissible fade show" role="alert">
 	   <i class="bi bi-check-circle-fill"></i> <i class="bi bi-exclamation-circle-fill"></i> <i class="bi bi-x-circle-fill"></i> It’s built with default Bootstrap components and utilities with little customization.
 	   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -146,7 +146,7 @@
 		  <hr class="d-block d-md-none">	
 		  
 		 				
-		  <!-- PATIENT_AGE -->
+		  <!-- patientData -->
 		  <div class="d-flex text-muted">
 		  	<i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -194,21 +194,21 @@
 		
 		  <hr class="d-none d-md-block">		
 		
-		  <!-- PATIENT_PHONE -->
+		  <!-- patientHome -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <div class="pb-3 mb-0 small lh-sm w-100">
 			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-telephone-fill me-2"></i>+1 773-770-8599</span></a></span>		
 		     </div>
 		  </div>
 			
-		  <!-- PATIENT_EMAIL -->
+		  <!-- patientEmail -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <div class="pb-3 mb-0 small lh-sm w-100">
 			  <span class="text-dark"><a href="#"><span class="badge bg-primary"><i class="bi bi-envelope me-2"></i>janea_predovic@exemple.com</span></a></span>
 		    </div>
 		  </div>
 			
-		  <!-- PATIENT_ADRESS -->
+		  <!-- patientAdddress -->
 		  <div class="d-flex text-muted d-none d-md-block">
 		    <i class="fs-5 bi bi-geo-alt d-block d-md-none me-3"></i>
 		      <div class="small lh-sm w-100">
@@ -221,7 +221,7 @@
 			
 		  <br>
 		
-		  <!-- PATIENT_RESPONSIBLE -->
+		  <!-- patientResponsible -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -237,13 +237,26 @@
 		  <br class="d-block d-md-none">
 		  <hr class="d-none d-md-block">
 		
-		  <!-- PATIENT_ALERGIES -->
+		  <!-- patientComorbidities -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
 			  <div class="small lh-sm w-100">
-				<span class="badge rounded-pill bg-secondary">tag1</span>
-				<span class="badge rounded-pill bg-secondary">tag2</span>
-				<span class="badge rounded-pill bg-secondary">tag3</span>
+				<span class="badge rounded-pill bg-secondary">Smoker</span>
+				<span class="badge rounded-pill bg-secondary">Alcohol</span>
+			    <span class="d-block opacity-50"><small>Comorbidities</small></span>
+			  </div>
+		  </div>
+		  
+		  <br>
+		  
+		  <!-- patientAlergies -->
+		  <div class="d-flex text-muted">
+		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
+			  <div class="small lh-sm w-100">
+				<span class="badge rounded-pill bg-secondary">Eggs</span>
+				<span class="badge rounded-pill bg-secondary">Peanuts</span>
+				<span class="badge rounded-pill bg-secondary">Dust</span>
+				<span class="badge rounded-pill bg-secondary">Pollen</span>
 			    <span class="d-block opacity-50"><small>Alergies</small></span>
 			  </div>
 		  </div>
@@ -263,7 +276,7 @@
 				
 		  <br> 
 			
-		  <!-- PATIENT_ACTIVITY -->
+		  <!-- patientActivity -->
 		  <div class="d-flex text-muted">
 		    <i class="fs-5 bi bi-clock d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -401,9 +414,13 @@
 					<input type="text" class="form-control form-control-sm" placeholder="Indication" aria-label="City">
 				  </div>
 				</div>
-			    <div class="d-grid gap-2 d-md-flex justify-content-md-star mt-3">
+			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 			      <a class="bi bi-plus-lg" href="">add exam</a>
-			    </div>				
+			    </div>
+				 <div class="mb-3 form-check">
+					<input type="checkbox" class="form-check-input" id="exampleCheck1">
+					<label class="form-check-label" for="exampleCheck1">I accept the terms of use and Privacy Policy</label>
+				  </div>				
 			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 			      <button class="btn btn-sm btn-primary" type="button">Send</button>
 			      <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
@@ -443,9 +460,13 @@
 					<input type="text" class="form-control form-control-sm" placeholder="Duration" aria-label="City">
 				  </div>
 				</div>
-			    <div class="d-grid gap-2 d-md-flex justify-content-md-star mt-3">
+			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 			      <a class="bi bi-plus-lg" href="">add prescriptions</a>
-			    </div>					
+			    </div>
+				 <div class="mb-3 form-check">
+					<input type="checkbox" class="form-check-input" id="exampleCheck1">
+					<label class="form-check-label" for="exampleCheck1">I accept the terms of use and Privacy Policy</label>
+				  </div>					
 			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 			      <button class="btn btn-sm btn-primary" type="button">Send</button>
 			      <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
@@ -454,6 +475,17 @@
 		    </div>				
 
 		  </div>
+		 
+		 	<!-- alert_2 -->	    
+			<div class="alert alert-primary alert-dismissible fade show mt-3" role="alert">
+			  <p class=""><strong>For dynamic conversations</strong></p>
+			  <p>Connect your medical certificate to enable prescription and medical orders. <a href="#">If you don't have one</a>, please provide a valid certificate.</p>
+			  <div class="d-grid gap-2 d-md-block d-flex">
+				<button class="btn btn-sm btn-primary" type="button">Connect</button>
+				<button class="btn btn-sm btn-primary" type="button">Support</button>
+			  </div>
+			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
 		 
 		  <!-- TimeLine -->
 		  <div class=" mt-3">
@@ -470,38 +502,44 @@
 			  <span class="">&nbsp;tagged</span>
 		        <a class="text-decoration-none" href="#">&nbsp;any&nbsp;<i class="bi bi-filter"></i></a>					
 		    </div>
-	  
-		    <!-- alert_2 -->	    
-			<div class="alert alert-primary alert-dismissible  fade show" role="alert">
-			  <p class=""><strong>For dynamic conversations</strong></p>
-			  <p>Send email, call, and text directly from Sell. Use email templates and call recordings for best results. <a href="#">Find out more</a></p>
-			  <div class="d-grid gap-2 d-md-block d-flex">
-				<button class="btn btn-sm btn-primary" type="button">Connect email address</button>
-				<button class="btn btn-sm btn-primary" type="button">Configure the call center</button>
-			  </div>
-			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
+
 		  		  
 		    <!-- Activity -->
 		    <ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-				<span><i class="bi bi-coin me-3"></i>userName moved to status <a href="#">Won</a> leadName</span>
+				<span><i class="bi bi-people me-3"></i>userName added a <a href="#">member </a> patientName</span>
 				<span class="">00/00/0000</span>
 			  </li>
 			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-				<span><i class="bi bi-check2-square me-3"></i>userName added a <a href="#">task</a> leadName</span>
+				<span><i class="bi bi-check2-square me-3"></i>userName added a <a href="#">tratament planning</a> patientName</span>
 				<span class="">00/00/0000</span>
 			  </li>
 			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-				<span><i class="bi bi-people me-3"></i>userName added a <a href="#">collborator</a> leadName</span>
+				<span><i class="bi bi-people me-3"></i>userName added a <a href="#">examination</a> patientName</span>
 				<span class="">00/00/0000</span>
 			  </li>
 			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-				<span><i class="bi bi-coin me-3"></i>userName added a <a href="#">documents</a> leadName</span>
+				<span><i class="bi bi-calendar me-3"></i>userName added a <a href="#">appointments</a> patientName</span>
 				<span class="">00/00/0000</span>
 			  </li>
 			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
-				<span><i class="bi bi-check2-square me-3"></i>userName added a <a href="#">tasks</a> leadName</span>
+				<span><i class="bi bi-journal-medical me-3"></i>userName added a <a href="#">medical history</a> patientName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-option  me-3"></i>userName added a <a href="#">device</a> patientName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-files me-3"></i>userName added a <a href="#">note</a> patientName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-files me-3"></i>userName added a <a href="#">examination request</a> patientName</span>
+				<span class="">00/00/0000</span>
+			  </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+				<span><i class="bi bi-files me-3"></i>userName added a <a href="#">prescription</a> patientName</span>
 				<span class="">00/00/0000</span>
 			  </li>
 			</ul>
@@ -515,7 +553,7 @@
 
 		  <div class="accordion" id="accordionExample">
 		  
-            <!-- health-team-accordion -->	
+            <!-- HealthTeamAccordion -->	
 		    <div class="accordion-item shadow-sm"> 
 			  <h2 class="accordion-header" id="headingOne">
 			  
@@ -537,12 +575,12 @@
 			  </h2>
 			  <div id="collaborators" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 			    <div class="accordion-body">
-				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href=""data-bs-toggle="modal" data-bs-target="#addHealthTeam">add member</a></div>
+				  <div class="text-center opacity-75 text-secondary"><a class="text-center" href=""data-bs-toggle="modal" data-bs-target="#chooseTeam">add member</a></div>
 			    </div>
 			  </div>
 		    </div>
 		  
-		    <!-- appointments-accordion -->
+		    <!-- AppointmentsAccordion -->
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingTwo">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appointments" aria-expanded="false" aria-controls="collapseTwo"
@@ -568,7 +606,7 @@
 			  </div>
 		    </div>
 			
-            <!-- treatament-planning-accordion -->	
+            <!-- TreatamentPlanningAccordion -->	
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 		      <h2 class="accordion-header" id="headingThree">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tasks" aria-expanded="false" aria-controls="collapseThree"
@@ -594,7 +632,7 @@
 			  </div>
 		    </div>
 			 
-			<!-- examinations-accordion --> 
+			<!-- ExaminationsAccordion --> 
 		    <div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFour">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#documents" aria-expanded="false" aria-controls="collapseFour" 
@@ -620,7 +658,7 @@
 			  </div>
 		    </div>
 			
-			<!-- medical-history-accordion -->
+			<!-- MedicalHistoryAccordion -->
 			<div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingFive">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#extra" aria-expanded="false" aria-controls="collapseFive" 
@@ -644,7 +682,7 @@
 			  </div>
 		    </div>
 			
-			<!-- device-accordion -->
+			<!-- DeviceAccordion -->
 			<div class="accordion-item mt-3 border-top shadow-sm">
 			  <h2 class="accordion-header" id="headingSix">
 			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#device" aria-expanded="false" aria-controls="collapseSix" 
@@ -678,9 +716,9 @@
       <a class="fab d-block d-md-none d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="bi bi-plus-lg"></i></a> 
 	
 	</div>
-  
+   
     <!-- editPatientModal -->
-    <div class="modal fade" id="editLead" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="editPatient" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
 		<div class="modal-content">
 		  <div class="modal-header border-0">
@@ -717,7 +755,28 @@
 					<option value="5">Single</option>
 				  </select>
 				</div>
-
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Height(m)</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Weight(kg)</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
+				</div>
+				<div class="col-sm-4">
+				  <label for="Name" class="form-label">Blood Group</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>Open this select menu</option>
+					<option value="1">A RhD positive (A+)</option>
+					<option value="2">A RhD negative (A-)</option>
+					<option value="3">B RhD positive (B+)</option>
+					<option value="4">B RhD negative (B-)</option>
+					<option value="5">O RhD positive (O+)</option>
+					<option value="5">O RhD negative (O-)</option>
+					<option value="5">AB RhD positive (AB+)</option>
+					<option value="5">AB RhD negative (AB-)</option>
+				  </select>
+				</div>
 				<h6>Contact</h6>
 				<div class="col-sm-6">
 				  <label for="Name" class="form-label">Phone</label>
@@ -760,8 +819,8 @@
 				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
 				
-				<h6>Owner Doctor</h6>
-				<div class="col-sm-4">
+				<h6>Assigned Doctor</h6>
+				<div class="col-sm-12">
 				  <label for="Name" class="form-label">Name</label>
 				  <select class="form-select form-select-sm" aria-label="Default select example">
 					<option selected>--</option>
@@ -776,6 +835,26 @@
 		</div>
 	  </div>
 	</div>	
+	
+	<!-- searchHealthTeamModal -->
+	<div class="modal fade" id="chooseTeam" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="chooseContactModalLabel">Choose a Team</h5>
+		  </div>
+		  <div class="modal-body">
+		    <form class="d-flex" role="search">
+			  <input class="form-control" type="search" placeholder="Type to filter by name" aria-label="Search">
+			</form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addHealthTeam">Add Member</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
 	
 	<!-- addHealthTeamModal -->
 	<div class="modal fade" id="addHealthTeam" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -799,14 +878,27 @@
 				  <input type="mail" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
 				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Anddres</label>
+				  <label for="Name" class="form-label">Address</label>
 				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
-				<div class="col-sm-12">
+				<div class="col-sm-6">
 				  <label for="Name" class="form-label">Specialty</label>
 				  <select class="form-select form-select-sm" aria-label="Default select example">
 					<option selected>--</option>
+					<option value="1">Administrator</option>
+					<option value="2">Physician (Doctor)</option>
+					<option value="3">Nurse</option>
+					<option value="4">Nurse Technician / Assistant</option>
+					<option value="5">Physiotherapist</option>
+					<option value="6">Speech Therapist</option>
+					<option value="7">Nutritionist</option>
+					<option value="8">Psychologist</option>
+					<option value="9">Social Worker</option>
 				  </select>	
+				</div>
+				<div class="col-sm-6">
+				  <label for="Name" class="form-label">License Number</label>
+				  <input type="text" id="Name" name="Name" class="form-control form-control-sm" >
 				</div>
 			  </form>
 		  </div>
@@ -873,65 +965,6 @@
 	  </div>
 	</div>  
 	
-	<!-- addDocumentModal -->
-	<div class="modal fade" id="addDocument" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
-		<div class="modal-content">
-		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">File Upload</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		  </div>
-		  <div class="modal-body">
-		  <div class="mt-3 mb-3">
-			<div class="input-group input-group-sm mb-3">
-			  <input type="file" class="form-control" id="inputGroupFile02">
-			  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-			</div>
-			<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-			  <div class="progress-bar" style="width: 0%">0%</div>
-			</div>				
-		  </div>
-		  </div>
-		  <div class="modal-footer bg-light">
-			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary">Save</button>
-		  </div>
-		</div>
-	  </div>
-	</div>   
-  
-	<!-- addMedicalHistoryModal -->
-	<div class="modal fade" id="addMedicalHistory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
-		<div class="modal-content">
-		  <div class="modal-header border-0">
-			<h5 class="modal-title" id="staticBackdropLabel">Add Medical History</h5>
-		  </div>
-		  <div class="modal-body">
-			  <form class="row g-3">
-			  	<div class="col-sm-12">
-				  <label for="Name" class="form-label">Type</label>
-				  <select class="form-select form-select-sm" aria-label="Default select example">
-					<option selected>--</option>
-					<option value="1">Previous Illnesses</option>
-					<option value="2">Hospitalizations</option>
-					<option value="3">Surgeries</option>
-				  </select>		  
-				</div>
-				<div class="col-sm-12">
-				  <label for="Name" class="form-label">Information</label>
-				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-				</div>			
-			  </form>
-		  </div>
-		  <div class="modal-footer bg-light">
-			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary">Save</button>
-		  </div>
-		</div>
-	  </div>
-	</div>  
-  
 	<!-- addTratamentPlanningModal -->
 	<div class="modal fade" id="addTratamentPlanning" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
@@ -1007,26 +1040,67 @@
 		  </div>
 		</div>
 	  </div>
-	</div>  
-  
-	<!-- deleteModal -->
-	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
+	</div>
+	
+	<!-- addExaminationModal -->
+	<div class="modal fade" id="addDocument" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
 		<div class="modal-content">
 		  <div class="modal-header border-0">
-			<h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Delete</h1>
+			<h5 class="modal-title" id="staticBackdropLabel">File Upload</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			Are yout sure want to delete this patient?
+		  <div class="mt-3 mb-3">
+			<div class="input-group input-group-sm mb-3">
+			  <input type="file" class="form-control" id="inputGroupFile02">
+			  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+			</div>
+			<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+			  <div class="progress-bar" style="width: 0%">0%</div>
+			</div>				
 		  </div>
-		  <div class="modal-footer bg-light border-0">
+		  </div>
+		  <div class="modal-footer bg-light">
 			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-sm btn-primary">&nbsp&nbsp&nbspOk&nbsp;&nbsp&nbsp</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>   
+  
+	<!-- addMedicalHistoryModal -->
+	<div class="modal fade" id="addMedicalHistory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h5 class="modal-title" id="staticBackdropLabel">Add Medical History</h5>
+		  </div>
+		  <div class="modal-body">
+			  <form class="row g-3">
+			  	<div class="col-sm-12">
+				  <label for="Name" class="form-label">Type</label>
+				  <select class="form-select form-select-sm" aria-label="Default select example">
+					<option selected>--</option>
+					<option value="1">Previous Illnesses</option>
+					<option value="2">Hospitalizations</option>
+					<option value="3">Surgeries</option>
+				  </select>		  
+				</div>
+				<div class="col-sm-12">
+				  <label for="Name" class="form-label">Information</label>
+				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>			
+			  </form>
+		  </div>
+		  <div class="modal-footer bg-light">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">Save</button>
 		  </div>
 		</div>
 	  </div>
 	</div>  
-  	
+  
 	<!-- addDeviceModal -->
 	<div class="modal fade" id="addDevice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-scrollable">
@@ -1065,8 +1139,26 @@
 		  </div>
 		</div>
 	  </div>
-	</div>
-
+	</div>  
+  
+	<!-- deleteModal -->
+	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header border-0">
+			<h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Delete</h1>
+		  </div>
+		  <div class="modal-body">
+			Are yout sure want to delete this patient?
+		  </div>
+		  <div class="modal-footer bg-light border-0">
+			<button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-sm btn-primary">&nbsp&nbsp&nbspOk&nbsp;&nbsp&nbsp</button>
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  		
 	<!-- monitorModal -->
 	<div class="modal fade" id="monitor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
@@ -1106,7 +1198,7 @@
 		   <br><small>Prescriptions</small>
 		  </div>
 		  <div class="col mt-3">
-		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#addHealthTeam" class="nav-link px-0 align-middle">
+		  	<a  type="button" class="btn btn-light rounded-circle" href="#" data-bs-toggle="modal" data-bs-target="#chooseTeam" class="nav-link px-0 align-middle">
 			  <i class="fs-5 h3-md bi bi-people text-secondary"></i>
 			</a>
 		    <br><small>Member</small>
@@ -1151,11 +1243,18 @@
 </html>
 
 <!-- next update -
-- limpeza de código
+- limpeza e correção de código
 - criar style.css
 - deixa prontos os fomulario, inputs, id, etc... para integração
 - ocultar div ao scrolar a página
 - exibir div scrolar a pagina
 - modal-header: botão voltar <i class="bi bi-arrow-left"></i> ao lado esquerdo do modal-title
-- accordion-header: adicionar um botão <i class="bi bi-plus-lg"></i> ao lado direito do titulo
+- criar pagina table
+  patient (patientId; patientName; Date check in doctorAssigned; patientStatus 
+  health team (proviceID; name; Specialty; Licence Number; Active Status
+  - criar pagina
+    login
+	reset-password
+	forgot-password
+	dashboard
 ->
