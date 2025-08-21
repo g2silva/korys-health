@@ -148,19 +148,19 @@
 		 				
 		  <!-- patientData -->
 		  <div class="d-flex text-muted">
-		  	<i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
-		    <div class="small lh-sm w-100">
-			  <div class="d-flex">
-			    <span class="text-dark">Male</span>
-			  </div>
-			  <span class="d-block opacity-50"><small>Sex</small></span>
-		    </div>
-		    <i class="fs-5 bi bi-calendar-event d-block d-md-none me-3"></i>
+		  	<i class="fs-5 bi bi-calendar-event d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
 			    <span class="text-dark">73</span>
 			  </div>
 			  <span class="d-block opacity-50"><small>Age</small></span>
+		    </div>
+		  	<i class="fs-5 bi bi-gender-ambiguous d-block d-md-none me-3"></i>
+		    <div class="small lh-sm w-100">
+			  <div class="d-flex">
+			    <span class="text-dark">Male</span>
+			  </div>
+			  <span class="d-block opacity-50"><small>Gender</small></span>
 		    </div>
 			<i class="fs-5 bi bi-bucket d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
@@ -195,7 +195,7 @@
 		
 		  <!-- patientMaritalStatus -->
 		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <i class="fs-5 bi bi-circle d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
 			    <span class="text-dark">Maried</span>
@@ -223,7 +223,7 @@
 			
 		  <!-- patientAdddress -->
 		  <div class="d-flex text-muted d-none d-md-block">
-		    <i class="fs-5 bi bi-geo-alt d-block d-md-none me-3"></i>
+		    <i class="fs-5 bi bi-tags d-block d-md-none me-3"></i>
 		      <div class="small lh-sm w-100">
 			    <div class="d-flex justify-content-between">
 			  	  <span class="text-dark">2712 Ivy Walk, West Ednashire, WEynoming 1852-2975 United State</span>
@@ -236,10 +236,10 @@
 		
 		  <!-- patientResponsible -->
 		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-option d-block d-md-none me-3"></i>
+		    <i class="fs-5 bi bi-person-exclamation d-block d-md-none me-3"></i>
 		    <div class="small lh-sm w-100">
 			  <div class="d-flex">
-			    <span class="text-dark">...</span>
+			    <span class="text-dark">Dora</span>
 			  </div>
 			  <span class="d-block opacity-50"><small>Responsible</small><i class="bi bi-dot"></i>
 			  	<span><small>Daughter</small></span>
@@ -252,7 +252,7 @@
 		
 		  <!-- patientComorbidities -->
 		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
+		    <i class="fs-5 bi bi-tags d-block d-md-none me-3"></i>
 			  <div class="small lh-sm w-100">
 				<span class="badge rounded-pill bg-secondary">Smoker</span>
 				<span class="badge rounded-pill bg-secondary">Alcohol</span>
@@ -264,7 +264,7 @@
 		  
 		  <!-- patientAlergies -->
 		  <div class="d-flex text-muted">
-		    <i class="fs-5 bi bi-bookmark d-block d-md-none me-3"></i>
+		    <i class="fs-5 bi bi-tags d-block d-md-none me-3"></i>
 			  <div class="small lh-sm w-100">
 				<span class="badge rounded-pill bg-secondary">Eggs</span>
 				<span class="badge rounded-pill bg-secondary">Peanuts</span>
@@ -396,7 +396,7 @@
 		    <!-- note-tab -->
 		    <div class="tab-pane fade show active" id="add_note" role="tabpanel" aria-labelledby="add_note">
 			  <div class="p-3">
-			    <textarea class="form-control form-control-sm" id="#" rows="6" placeholder="Comments"></textarea>
+			    <textarea class="form-control form-control-sm" id="#" rows="4" placeholder="Comments"></textarea>
 			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
 				  <button class="btn btn-sm btn-primary" type="button">Save</button>
 				  <button class="btn btn-sm btn-outline-primary" type="button">Cancel</button>
@@ -414,21 +414,9 @@
 				  <div class="col-md-6">
 					<input type="text" class="form-control form-control-sm" placeholder="Indication" aria-label="City">
 				  </div>
-				  <div class="col-md-6">
-					<input type="text" class="form-control form-control-sm" placeholder="Exam Name" aria-label="City">
-				  </div>
-				  <div class="col-md-6">
-					<input type="text" class="form-control form-control-sm" placeholder="Indication" aria-label="City">
-				  </div>
-				  <div class="col-md-6">
-					<input type="text" class="form-control form-control-sm" placeholder="Exam Name" aria-label="City">
-				  </div>
-				  <div class="col-md-6">
-					<input type="text" class="form-control form-control-sm" placeholder="Indication" aria-label="City">
-				  </div>
 				</div>
 			    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-			      <a class="bi bi-plus-lg" href="">add exam</a>
+			      <a class="bi bi-plus-lg" href="#">add exam</a>
 			    </div>
 				 <div class="mb-3 form-check">
 					<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -445,24 +433,6 @@
 		    <div class="tab-pane fade" id="prescriptions" role="tabpanel" aria-labelledby="prescriptions">	  
 			  <div class="p-3">
 				<div class="row g-1">
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Medicine Name" aria-label="City">
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Dosage" aria-label="City">
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Duration" aria-label="City">
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Medicine Name" aria-label="City">
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Dosage" aria-label="City">
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" class="form-control form-control-sm" placeholder="Duration" aria-label="City">
-				  </div>
 				  <div class="col-md-4">
 					<input type="text" class="form-control form-control-sm" placeholder="Medicine Name" aria-label="City">
 				  </div>
@@ -1181,7 +1151,33 @@
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			...
+		    
+			  <h6>HR</h6>
+			  <div class="p-5 mb-4 bg-light rounded-3">
+		        <div class="container-fluid py-2">
+		        </div>
+		      </div>
+			  <h6>Blood Pressure</h6>
+			  <div class="p-5 mb-4 bg-light rounded-3">
+		        <div class="container-fluid py-2">
+		        </div>
+		      </div>
+			  <h6>Respiratory Rate</h6>
+			  <div class="p-5 mb-4 bg-light rounded-3">
+		        <div class="container-fluid py-2">
+		        </div>
+		      </div>
+			  <h6>O2</h6>
+			  <div class="p-5 mb-4 bg-light rounded-3">
+		        <div class="container-fluid py-2">
+		        </div>
+		      </div>
+			  <h6>Temperature</h6>
+			  <div class="p-5 mb-4 bg-light rounded-3">
+		        <div class="container-fluid py-2">
+		        </div>
+		      </div>
+
 		  </div>
 		</div>
 	  </div>
