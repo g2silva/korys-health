@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="#">
+
+<div class="container my-5">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Patient</h3>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPatientModal">Add Patient</button>
+  </div>
+
+  <!-- Table -->
+  <table class="table table-striped" id="patientTable">
+    <thead class="table">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Assigned Doctor</th>
+        <th>Contact Responsible</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows added dynamically -->
+    </tbody>
+  </table>
+
+  <!-- ================== Modals ================== -->
+
+  <!-- Add Patient Modal -->
+  <div class="modal fade" id="addPatientModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Patient</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addPatientForm" class="row g-3">
+
+            <!-- Personal Info -->
+            <h6>Personal Info</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="addFullName" required>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Birth Date</label>
+              <input type="date" class="form-control" id="addBirthDate" required>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Gender</label>
+              <select class="form-select" id="addGender" required>
+                <option value="" selected disabled>Select</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Marital Status</label>
+              <select class="form-select" id="addMaritalStatus" required>
+                <option value="" selected disabled>Select</option>
+                <option>Married</option>
+                <option>Widowed</option>
+                <option>Separated</option>
+                <option>Divorced</option>
+                <option>Single</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Height (m)</label>
+              <input type="number" step="0.01" class="form-control" id="addHeight">
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Weight (kg)</label>
+              <input type="number" step="0.1" class="form-control" id="addWeight">
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Blood Group</label>
+              <select class="form-select" id="addBloodGroup">
+                <option value="" selected disabled>Select</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+              </select>
+            </div>
+
+            <!-- Contact -->
+            <h6>Contact</h6>
+            <div class="col-sm-4">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" id="addPhone">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Mail</label>
+              <input type="email" class="form-control" id="addMail">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" id="addAddress">
+            </div>
+
+            <!-- Medical Info -->
+            <h6>Medical Information</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Comorbidities</label>
+              <textarea class="form-control" id="addComorbidities" rows="2"></textarea>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label">Allergies</label>
+              <textarea class="form-control" id="addAllergies" rows="2"></textarea>
+            </div>
+
+            <!-- Responsible -->
+            <h6>Responsible</h6>
+            <div class="col-sm-4">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" id="addRespName">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Type</label>
+              <input type="text" class="form-control" id="addRespType">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" id="addRespPhone">
+            </div>
+
+            <!-- Assigned Doctor & Status -->
+            <h6>Assigned Doctor</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" id="addDoctor">
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label">Status</label>
+              <select class="form-select" id="addStatus">
+                <option value="Active">Active</option>
+                <option value="High">High</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary w-100">Save</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Patient Modal -->
+  <div class="modal fade" id="viewPatientModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">View Patient</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="viewPatientBody">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Patient Modal -->
+  <div class="modal fade" id="editPatientModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Patient</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editPatientForm" class="row g-3">
+
+            <input type="hidden" id="editIndex">
+
+            <!-- Personal Info -->
+            <h6>Personal Info</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="editFullName" required>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Birth Date</label>
+              <input type="date" class="form-control" id="editBirthDate">
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Gender</label>
+              <select class="form-select" id="editGender">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Marital Status</label>
+              <select class="form-select" id="editMaritalStatus">
+                <option>Married</option>
+                <option>Widowed</option>
+                <option>Separated</option>
+                <option>Divorced</option>
+                <option>Single</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Height (m)</label>
+              <input type="number" step="0.01" class="form-control" id="editHeight">
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Weight (kg)</label>
+              <input type="number" step="0.1" class="form-control" id="editWeight">
+            </div>
+            <div class="col-sm-3">
+              <label class="form-label">Blood Group</label>
+              <select class="form-select" id="editBloodGroup">
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+              </select>
+            </div>
+
+            <!-- Contact -->
+            <h6>Contact</h6>
+            <div class="col-sm-4">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" id="editPhone">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Mail</label>
+              <input type="email" class="form-control" id="editMail">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" id="editAddress">
+            </div>
+
+            <!-- Medical Info -->
+            <h6>Medical Information</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Comorbidities</label>
+              <textarea class="form-control" id="editComorbidities" rows="2"></textarea>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label">Allergies</label>
+              <textarea class="form-control" id="editAllergies" rows="2"></textarea>
+            </div>
+
+            <!-- Responsible -->
+            <h6>Responsible</h6>
+            <div class="col-sm-4">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" id="editRespName">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Type</label>
+              <input type="text" class="form-control" id="editRespType">
+            </div>
+            <div class="col-sm-4">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" id="editRespPhone">
+            </div>
+
+            <!-- Assigned Doctor & Status -->
+            <h6>Assigned Doctor</h6>
+            <div class="col-sm-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" id="editDoctor">
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label">Status</label>
+              <select class="form-select" id="editStatus">
+                <option value="Active">Active</option>
+                <option value="High">High</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary w-100">Update</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let patients = [];
+
+  const patientTableBody = document.querySelector("#patientTable tbody");
+  const addForm = document.getElementById("addPatientForm");
+  const editForm = document.getElementById("editPatientForm");
+
+  function renderTable() {
+    patientTableBody.innerHTML = "";
+    patients.forEach((p, index) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${index+1}</td>
+        <td>${p.fullName}</td>
+        <td>${p.doctor}</td>
+        <td>${p.respName} - ${p.respPhone}</td>
+        <td><span class="badge ${p.status==='Active'?'bg-success':p.status==='High'?'bg-warning':'bg-secondary'}">${p.status}</span></td>
+        <td>
+          <button class="btn btn-sm btn-info" onclick="viewPatient(${index})" data-bs-toggle="modal" data-bs-target="#viewPatientModal">View</button>
+          <button class="btn btn-sm btn-warning" onclick="editPatient(${index})" data-bs-toggle="modal" data-bs-target="#editPatientModal">Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deletePatient(${index})">Delete</button>
+        </td>
+      `;
+      patientTableBody.appendChild(tr);
+    });
+  }
+
+  // Add patient
+  addForm.addEventListener("submit", e=>{
+    e.preventDefault();
+    const patient = {
+      fullName: document.getElementById("addFullName").value,
+      birthDate: document.getElementById("addBirthDate").value,
+      gender: document.getElementById("addGender").value,
+      maritalStatus: document.getElementById("addMaritalStatus").value,
+      height: document.getElementById("addHeight").value,
+      weight: document.getElementById("addWeight").value,
+      bloodGroup: document.getElementById("addBloodGroup").value,
+      phone: document.getElementById("addPhone").value,
+      mail: document.getElementById("addMail").value,
+      address: document.getElementById("addAddress").value,
+      comorbidities: document.getElementById("addComorbidities").value,
+      allergies: document.getElementById("addAllergies").value,
+      respName: document.getElementById("addRespName").value,
+      respType: document.getElementById("addRespType").value,
+      respPhone: document.getElementById("addRespPhone").value,
+      doctor: document.getElementById("addDoctor").value,
+      status: document.getElementById("addStatus").value
+    };
+    patients.push(patient);
+    renderTable();
+    addForm.reset();
+    bootstrap.Modal.getInstance(document.getElementById("addPatientModal")).hide();
+  });
+
+  // View patient
+  function viewPatient(index){
+    const p = patients[index];
+    document.getElementById("viewPatientBody").innerHTML = `
+      <h6>Personal Info</h6>
+      <p><strong>Full Name:</strong> ${p.fullName}</p>
+      <p><strong>Birth Date:</strong> ${p.birthDate}</p>
+      <p><strong>Gender:</strong> ${p.gender}</p>
+      <p><strong>Marital Status:</strong> ${p.maritalStatus}</p>
+      <p><strong>Height:</strong> ${p.height} m</p>
+      <p><strong>Weight:</strong> ${p.weight} kg</p>
+      <p><strong>Blood Group:</strong> ${p.bloodGroup}</p>
+
+      <h6>Contact</h6>
+      <p><strong>Phone:</strong> ${p.phone}</p>
+      <p><strong>Mail:</strong> ${p.mail}</p>
+      <p><strong>Address:</strong> ${p.address}</p>
+
+      <h6>Medical Information</h6>
+      <p><strong>Comorbidities:</strong> ${p.comorbidities}</p>
+      <p><strong>Allergies:</strong> ${p.allergies}</p>
+
+      <h6>Responsible</h6>
+      <p><strong>Name:</strong> ${p.respName}</p>
+      <p><strong>Type:</strong> ${p.respType}</p>
+      <p><strong>Phone:</strong> ${p.respPhone}</p>
+
+      <h6>Assigned Doctor</h6>
+      <p><strong>Name:</strong> ${p.doctor}</p>
+      <p><strong>Status:</strong> ${p.status}</p>
+    `;
+  }
+
+  // Edit patient
+  function editPatient(index){
+    const p = patients[index];
+    document.getElementById("editIndex").value = index;
+    document.getElementById("editFullName").value = p.fullName;
+    document.getElementById("editBirthDate").value = p.birthDate;
+    document.getElementById("editGender").value = p.gender;
+    document.getElementById("editMaritalStatus").value = p.maritalStatus;
+    document.getElementById("editHeight").value = p.height;
+    document.getElementById("editWeight").value = p.weight;
+    document.getElementById("editBloodGroup").value = p.bloodGroup;
+    document.getElementById("editPhone").value = p.phone;
+    document.getElementById("editMail").value = p.mail;
+    document.getElementById("editAddress").value = p.address;
+    document.getElementById("editComorbidities").value = p.comorbidities;
+    document.getElementById("editAllergies").value = p.allergies;
+    document.getElementById("editRespName").value = p.respName;
+    document.getElementById("editRespType").value = p.respType;
+    document.getElementById("editRespPhone").value = p.respPhone;
+    document.getElementById("editDoctor").value = p.doctor;
+    document.getElementById("editStatus").value = p.status;
+  }
+
+  editForm.addEventListener("submit", e=>{
+    e.preventDefault();
+    const index = document.getElementById("editIndex").value;
+    patients[index] = {
+      fullName: document.getElementById("editFullName").value,
+      birthDate: document.getElementById("editBirthDate").value,
+      gender: document.getElementById("editGender").value,
+      maritalStatus: document.getElementById("editMaritalStatus").value,
+      height: document.getElementById("editHeight").value,
+      weight: document.getElementById("editWeight").value,
+      bloodGroup: document.getElementById("editBloodGroup").value,
+      phone: document.getElementById("editPhone").value,
+      mail: document.getElementById("editMail").value,
+      address: document.getElementById("editAddress").value,
+      comorbidities: document.getElementById("editComorbidities").value,
+      allergies: document.getElementById("editAllergies").value,
+      respName: document.getElementById("editRespName").value,
+      respType: document.getElementById("editRespType").value,
+      respPhone: document.getElementById("editRespPhone").value,
+      doctor: document.getElementById("editDoctor").value,
+      status: document.getElementById("editStatus").value
+    };
+    renderTable();
+    bootstrap.Modal.getInstance(document.getElementById("editPatientModal")).hide();
+  });
+
+  // Delete patient
+  function deletePatient(index){
+    if(confirm("Are you sure you want to delete this patient?")){
+      patients.splice(index,1);
+      renderTable();
+    }
+  }
+</script>
+
+</body>
+</html>

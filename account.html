@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Account - Korys Health</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="">
+
+  <div class="container py-5">
+
+    <h3 class="mb-4">User Account</h3>
+
+    <!-- General Information -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        General Information
+      </div>
+      <div class="card-body">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="John Doe">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="john@example.com">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" placeholder="+1 (555) 123-4567">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" placeholder="123 Main Street, Los Angeles">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Specialty</label>
+            <input type="text" class="form-control" placeholder="Cardiologist">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">ID Register</label>
+            <input type="text" class="form-control" placeholder="123456789">
+          </div>
+          <div class="col-12 d-grid d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Two Factor Security -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        Two-Factor Security
+      </div>
+      <div class="card-body">
+        <p class="text-muted">
+          Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.
+        </p>
+        <button class="btn btn-primary mb-3">Enable</button>
+
+        <div class="list-group">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>Authenticator app</strong><br>
+              <small class="text-muted">Google Auth or 1Password</small>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary">Setup</button>
+          </div>
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>SMS Recovery</strong><br>
+              <small class="text-muted">Standard messaging rates apply</small>
+            </div>
+            <button class="btn btn-sm btn-danger">Disable</button>
+          </div>
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>Recovery codes</strong><br>
+              <small class="text-muted">Keep them safe</small>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary">Reveal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change Password -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        Change Password
+      </div>
+      <div class="card-body">
+        <p class="text-muted">You will receive an email confirmation when changing your password.</p>
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Current password</label>
+                <input type="password" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">New password</label>
+                <input type="password" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm new password</label>
+                <input type="password" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <div class="border rounded p-3 bg-light">
+              <h6>Password requirements</h6>
+              <small class="text-muted">
+                To create a new password, you must meet all of the following:
+              </small>
+              <ul class="mt-2 small">
+                <li>Minimum 8 characters</li>
+                <li>At least one special character</li>
+                <li>At least one number</li>
+                <li>Cannot be the same as previous password</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Device History -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        Device History
+        <button class="btn btn-sm btn-outline-primary">Log out all devices</button>
+      </div>
+      <div class="card-body">
+        <p class="text-muted">If you see a device here that wasn’t you, contact support immediately.</p>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-phone me-2"></i> iPhone 11 <br>
+              <small class="text-muted">Los Angeles, CA · April 20 at 4:16pm</small>
+            </div>
+            <button class="btn btn-sm btn-outline-primary">Log out</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-laptop me-2"></i> iMac OSX - Safari 10.2 <br>
+              <small class="text-muted">Los Angeles, CA · April 20 at 4:16pm</small>
+            </div>
+            <button class="btn btn-sm btn-outline-primary">Log out</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-phone me-2"></i> iPhone 11 <br>
+              <small class="text-muted">Los Angeles, CA · April 20 at 4:16pm</small>
+            </div>
+            <button class="btn btn-sm btn-outline-danger">Log out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        Notifications
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-check form-switch d-flex justify-content-between align-items-center mb-3">
+            <label class="form-check-label" for="notifyEmail">Email Notifications</label>
+            <input class="form-check-input" type="checkbox" id="notifyEmail">
+          </div>
+          <div class="form-check form-switch d-flex justify-content-between align-items-center mb-3">
+            <label class="form-check-label" for="notifySMS">SMS Notifications</label>
+            <input class="form-check-input" type="checkbox" id="notifySMS">
+          </div>
+
+          <h6 class="mt-3">Subscriptions</h6>
+          <div class="form-check form-switch d-flex justify-content-between align-items-center mb-3">
+            <label class="form-check-label" for="productUpdates">Product Updates</label>
+            <input class="form-check-input" type="checkbox" id="productUpdates">
+          </div>
+          <div class="form-check form-switch d-flex justify-content-between align-items-center mb-3">
+            <label class="form-check-label" for="newsletter">Newsletter</label>
+            <input class="form-check-input" type="checkbox" id="newsletter">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Notifications</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
