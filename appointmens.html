@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appointments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="#">
+
+<div class="container py-5">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Appointment</h3>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">Add Appointment</button>
+  </div>
+  
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="table">
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Alert</th>
+          <th>Owner</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="appointmentsTable">
+        <!-- Linhas adicionadas via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal de Formulário -->
+  <div class="modal fade" id="appointmentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Appointment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="appointmentForm" class="row g-3">
+            <div class="col-12">
+              <label class="form-label">Title</label>
+              <input type="text" id="title" class="form-control form-control-sm" required>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Date</label>
+              <input type="date" id="date" class="form-control form-control-sm" required>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Time</label>
+              <input type="time" id="time" class="form-control form-control-sm" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Alert</label>
+              <select id="alert" class="form-select form-select-sm">
+                <option value="">Set alert</option>
+                <option value="No alert">No alert</option>
+                <option value="At Time of Event">At Time of Event</option>
+                <option value="5 Minutes">5 Minutes</option>
+                <option value="15 Minutes">15 Minutes</option>
+                <option value="30 Minutes">30 Minutes</option>
+                <option value="1 Hour">1 Hour</option>
+                <option value="1 Day">1 Day</option>
+                <option value="1 Week">1 Week</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Owner</label>
+              <select id="owner" class="form-select form-select-sm">
+                <option value="">--</option>
+                <option value="User1">User1</option>
+                <option value="User2">User2</option>
+              </select>
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const form = document.getElementById('appointmentForm');
+  const table = document.getElementById('appointmentsTable');
+  let editRow = null;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const title = form.title.value.trim();
+    const date = form.date.value;
+    const time = form.time.value;
+    const alert = form.alert.value;
+    const owner = form.owner.value;
+
+    if(editRow){
+      editRow.children[0].textContent = title;
+      editRow.children[1].textContent = date;
+      editRow.children[2].textContent = time;
+      editRow.children[3].textContent = alert;
+      editRow.children[4].textContent = owner;
+      editRow = null;
+    } else {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${title}</td>
+        <td>${date}</td>
+        <td>${time}</td>
+        <td>${alert}</td>
+        <td>${owner}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-1 edit">Edit</button>
+          <button class="btn btn-danger btn-sm delete">Delete</button>
+        </td>
+      `;
+      table.appendChild(row);
+    }
+
+    form.reset();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+    modal.hide();
+  });
+
+  table.addEventListener('click', function(e){
+    if(e.target.classList.contains('delete')){
+      e.target.closest('tr').remove();
+    } else if(e.target.classList.contains('edit')){
+      editRow = e.target.closest('tr');
+      form.title.value = editRow.children[0].textContent;
+      form.date.value = editRow.children[1].textContent;
+      form.time.value = editRow.children[2].textContent;
+      form.alert.value = editRow.children[3].textContent;
+      form.owner.value = editRow.children[4].textContent;
+      const modal = new bootstrap.Modal(document.getElementById('appointmentModal'));
+      modal.show();
+    }
+  });
+</script>
+
+</body>
+</html>
